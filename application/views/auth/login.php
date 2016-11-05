@@ -2,17 +2,17 @@
 	<nav class="navbar navbar-inverse navbar-static-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="<?php echo site_url(); ?>">SisGC</a>
+				<a class="navbar-brand" href="<?php echo site_url(); ?>"><?php echo $titulo; ?></a>
 			</div>
 		</div>
 	</nav>
 </header>
 <section>
 	<div class="container" id="login">
-		<h1>Sistema de Gestão de Cargas</h1>
+		<h1>WebSIS</h1>
 		<form action="" method="post" accept-charset="utf-8">
-			<label for="identity" class="control-label sr-only">Email</label>
-			<input type="text" id="identity" name="identity" class="form-control" value="<?php echo set_value('identity'); ?>" placeholder="Email" autofocus />
+			<label for="identity" class="control-label sr-only">Usuário</label>
+			<input type="text" id="identity" name="identity" class="form-control" value="<?php echo set_value('identity'); ?>" placeholder="Usuário" autofocus />
 			<label for="password" class="control-label sr-only">Senha</label>
 			<input type="password" id="password" name="password" class="form-control" placeholder="Senha" />
 

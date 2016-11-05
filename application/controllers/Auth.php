@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auth extends CI_Controller {
 
-	public $titulo = 'SisGC';
+	public $titulo = 'WebSIS';
 
 	public function __construct()
 	{
@@ -59,7 +59,7 @@ class Auth extends CI_Controller {
 		$data['view']              = 'auth/login';
 
 		//validate form input
-		$this->form_validation->set_rules('identity', 'Email', 'required|valid_email');
+		$this->form_validation->set_rules('identity', 'Email', 'required');
 		$this->form_validation->set_rules('password', 'Senha', 'required');
 
 		if ($this->form_validation->run() == true)
@@ -73,7 +73,7 @@ class Auth extends CI_Controller {
 				//if the login is successful
 				//redirect them back to the home page
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
-				redirect('/', 'refresh');
+				redirect(site_url(), 'refresh');
 			}
 			else
 			{
