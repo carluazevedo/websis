@@ -1,5 +1,8 @@
 <?php $this->load->view('modelos/barra_nav'); ?>
 
+<?php $this->load->view('modelos/modal/painel_registrar'); ?>
+<?php $this->load->view('modelos/modal/painel_remover'); ?>
+
 <section>
 	<div class="container-fluid">
 		<div class="row">
@@ -24,7 +27,7 @@
 						<tbody>
 							<?php if (!$registros) : ?>
 							<tr>
-								<td class="text-center danger" colspan="8">Não há registros de viagens.</td>
+								<td class="text-center danger" colspan="8">Não há registros de ponto.</td>
 							</tr>
 							<?php else : ?>
 								<?php foreach ($registros as $reg) : ?>
@@ -37,12 +40,12 @@
 									<td><?php echo $reg->saida_2; ?></td>
 									<td><?php echo $reg->observacoes; ?></td>
 									<td class="acoes">
-										<button type="button" class="btn btn-sm btn-success acao-editar" title="Editar" value="<?php echo $reg->id; ?>" onclick="editarViagem(this)">
+										<button type="button" class="btn btn-sm btn-success acao-editar" title="Editar" value="<?php echo $reg->id; ?>" onclick="editarRegistro(this)">
 											<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 										</button>
 									</td>
 									<td class="acoes">
-										<button type="button" class="btn btn-sm btn-danger acao-remover" title="Remover" value="<?php echo $reg->id; ?>" onclick="removerViagem(this)">
+										<button type="button" class="btn btn-sm btn-danger acao-remover" title="Remover" value="<?php echo $reg->id; ?>" onclick="removerRegistro(this)">
 											<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 										</button>
 									</td>

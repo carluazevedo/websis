@@ -85,6 +85,7 @@ legend {
   color: #d9534f;
 }
 
+#modal-registrar .modal-header .glyphicon-plus,
 #modal-visualizar .modal-header .glyphicon-eye-open,
 #modal-editar .modal-header .glyphicon-edit,
 #modal-finalizar .modal-header .glyphicon-save {

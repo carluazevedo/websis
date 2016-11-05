@@ -20,6 +20,11 @@ class RegistroPonto extends CI_Controller {
 		$data['view']              = 'registroponto/painel';
 		/* Informações para 'view' */
 		$data['titulo_pagina'] = 'Registro de Ponto';
+		/* Informações para 'rodape.php' */
+		$data['incluir_rodape'] = array(
+			$this->load->view('registroponto/painel_scripts', '', true),
+			'<script src="'.base_url('scripts/painel.js').'"></script>'
+		);
 		/* Lógica do controlador */
 		$colunas = array(
 			'id',
@@ -35,5 +40,10 @@ class RegistroPonto extends CI_Controller {
 		/* Conclusão */
 		$this->load->view('modelos/cabecalho', $data);
 		$this->load->view('modelos/rodape', $data);
+	}
+
+	public function registrar()
+	{
+		
 	}
 }
