@@ -13,14 +13,14 @@
 					<div class="row">
 						<form action="" method="post" class="form-horizontal" id="registrar-ponto" accept-charset="utf-8" onsubmit="converterCaixaAlta()">
 							<div class="form-group">
-								<label for="data" class="col-sm-2 control-label" title="Data do registro">Data</label>
+								<label for="data" class="col-sm-4 control-label" title="Data do registro">Data</label>
 								<div class="col-sm-4">
 									<input type="date" class="form-control" name="data" id="data">
 								</div>
 							</div><!-- /.form-group -->
 
 							<div class="form-group">
-								<label for="folga" class="col-sm-2 control-label" title="Dia de folga">Folga</label>
+								<label for="folga" class="col-sm-4 control-label" title="Dia de folga">Folga</label>
 								<div class="col-sm-4">
 									<label class="radio-inline">
 										<input type="radio" name="folga" id="folga" value="1">
@@ -34,35 +34,35 @@
 							</div><!-- /.form-group -->
 
 							<div class="form-group">
-								<label for="entrada_1" class="col-sm-2 control-label" title="Entrada 1">Entrada</label>
+								<label for="entrada_1" class="col-sm-4 control-label" title="Entrada 1">Entrada</label>
 								<div class="col-sm-4">
 									<input type="time" class="form-control" name="entrada_1" id="entrada_1">
 								</div>
 							</div><!-- /.form-group -->
 
 							<div class="form-group">
-								<label for="saida_1" class="col-sm-2 control-label" title="Saída 1">Saída</label>
+								<label for="saida_1" class="col-sm-4 control-label" title="Saída 1">Saída</label>
 								<div class="col-sm-4">
 									<input type="time" class="form-control" name="saida_1" id="saida_1">
 								</div>
 							</div><!-- /.form-group -->
 				
 							<div class="form-group">
-								<label for="entrada_2" class="col-sm-2 control-label" title="Entrada 2">Entrada</label>
+								<label for="entrada_2" class="col-sm-4 control-label" title="Entrada 2">Entrada</label>
 								<div class="col-sm-4">
 									<input type="time" class="form-control" name="entrada_2" id="entrada_2">
 								</div>
 							</div><!-- /.form-group -->
 				
 							<div class="form-group">
-								<label for="saida_2" class="col-sm-2 control-label" title="Saída 2">Saída</label>
+								<label for="saida_2" class="col-sm-4 control-label" title="Saída 2">Saída</label>
 								<div class="col-sm-4">
 									<input type="time" class="form-control" name="saida_2" id="saida_2">
 								</div>
 							</div><!-- /.form-group -->
 				
 							<div class="form-group">
-								<label for="observacoes" class="col-sm-2 control-label" title="Observações">Obs.</label>
+								<label for="observacoes" class="col-sm-4 control-label" title="Observações">Observações</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" name="observacoes" id="observacoes">
 								</div>

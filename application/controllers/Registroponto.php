@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class RegistroPonto extends CI_Controller {
+class Registroponto extends CI_Controller {
 
 	public $titulo = 'WebSIS';
 	
