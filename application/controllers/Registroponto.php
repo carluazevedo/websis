@@ -29,6 +29,7 @@ class Registroponto extends CI_Controller {
 			'<script src="'.base_url('scripts/jquery-mask/jquery.mask.min.js').'"></script>',
 			'<script src="'.base_url('scripts/bootstrap-datepicker/js/bootstrap-datepicker.min.js').'"></script>',
 			'<script src="'.base_url('scripts/bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.min.js').'"></script>',
+			'<script src="'.base_url('scripts/ajax_lib.js').'"></script>',
 			'<script src="'.base_url('scripts/painel.js').'"></script>'
 		);
 		/* Lógica do controlador */
@@ -50,6 +51,41 @@ class Registroponto extends CI_Controller {
 
 	public function registrar()
 	{
-		
+		$this->input->post('data') OR exit(show_error('Acesso não permitido.', 403, '403 Forbidden'));
+		$dados_registro = array(
+				'data'        => $this->registroponto_model->formata_data_mysql($this->input->post('data')),
+				'folga'       => $this->input->post('folga'),
+				'entrada_1'   => $this->input->post('entrada_1'),
+				'saida_1'     => $this->input->post('saida_1'),
+				'entrada_2'   => $this->input->post('entrada_2'),
+				'saida_2'     => $this->input->post('saida_2'),
+				'observacoes' => $this->input->post('observacoes')
+		);
+		if ($this->registroponto_model->registrar('reg_ponto_carlu', $dados_registro) == true) {
+			$this->session->set_flashdata('sucesso', 'Viagem registrada com sucesso.');
+			redirect(site_url(), 'refresh');
+		}
+	}
+
+	public function buscar($id)
+	{
+		$dados = $this->registroponto_model->buscar_registro('reg_ponto_carlu', 'id', $id);
+		$dados_registro = array(
+			'data'        => $this->registroponto_model->formata_data($dados->data),
+			'folga'       => $dados->folga,
+			'entrada_1'   => $this->registroponto_model->formata_hora($dados->entrada_1),
+			'saida_1'     => $this->registroponto_model->formata_hora($dados->saida_1),
+			'entrada_2'   => $this->registroponto_model->formata_hora($dados->entrada_2),
+			'saida_2'     => $this->registroponto_model->formata_hora($dados->saida_2),
+			'observacoes' => $dados->observacoes
+		);
+		header("Content-Type: application/json; charset=UTF-8");
+		if (isset($dados_registro)) {
+			$json_registro = json_encode($dados_registro, JSON_UNESCAPED_UNICODE);
+			echo $json_registro;
+		} else {
+			echo "[]";
+		}
+
 	}
 }

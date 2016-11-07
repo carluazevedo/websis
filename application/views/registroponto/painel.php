@@ -1,6 +1,7 @@
 <?php $this->load->view('modelos/barra_nav'); ?>
 
 <?php $this->load->view('modelos/modal/painel_registrar'); ?>
+<?php $this->load->view('modelos/modal/painel_editar'); ?>
 <?php $this->load->view('modelos/modal/painel_remover'); ?>
 
 <section>
@@ -10,6 +11,14 @@
 				<div class="page-header">
 					<h1><?php echo $titulo_pagina; ?></h1>
 				</div>
+				<?php if ($this->session->flashdata('sucesso') != null) : ?>
+				
+				<!-- Alerta de sucesso -->
+				<div class="alert alert-success alert-dismissible fade in" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+					<span class="glyphicon glyphicon-ok-sign"></span> <?php echo $this->session->flashdata('sucesso'); ?>
+				</div>
+				<?php endif; ?>
 				<div class="table-responsive">
 					<table class="table table-condensed table-hover">
 						<thead>
@@ -33,13 +42,13 @@
 								<?php foreach ($registros as $reg) : ?>
 
 							<tr>
-								<td><?php echo $this->registroponto_model->formata_data_mysql($reg->data); ?></td>
+								<td><?php echo $this->registroponto_model->formata_data($reg->data); ?></td>
 								<?php if ($reg->folga == 0) : ?>
 
-								<td><?php echo $this->registroponto_model->formata_hora_mysql($reg->entrada_1); ?></td>
-								<td><?php echo $this->registroponto_model->formata_hora_mysql($reg->saida_1); ?></td>
-								<td><?php echo $this->registroponto_model->formata_hora_mysql($reg->entrada_2); ?></td>
-								<td><?php echo $this->registroponto_model->formata_hora_mysql($reg->saida_2); ?></td>
+								<td><?php echo $this->registroponto_model->formata_hora($reg->entrada_1); ?></td>
+								<td><?php echo $this->registroponto_model->formata_hora($reg->saida_1); ?></td>
+								<td><?php echo $this->registroponto_model->formata_hora($reg->entrada_2); ?></td>
+								<td><?php echo $this->registroponto_model->formata_hora($reg->saida_2); ?></td>
 								<?php elseif ($reg->folga == 1) : ?>
 
 								<td class="text-center active" colspan="4"><strong>FOLGA</strong></td>

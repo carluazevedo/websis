@@ -16,7 +16,7 @@
 			<div class="collapse navbar-collapse" id="navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="#" class="acao-registrar">Registrar Ponto</a>
+						<a href="#" class="acao-registrar" onclick="registrarPonto()">Registrar Ponto</a>
 					</li>
 				</ul>
 
