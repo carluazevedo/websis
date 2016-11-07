@@ -16,13 +16,19 @@ class Registroponto extends CI_Controller {
 	{
 		/* Informações para 'cabecalho.php' */
 		$data['titulo']            = $this->titulo;
-		$data['incluir_cabecalho'] = array(link_tag('styles/geral.css'));
+		$data['incluir_cabecalho'] = array(
+			link_tag('styles/geral.css'),				
+			link_tag('scripts/bootstrap-datepicker/css/bootstrap-datepicker3.min.css')				
+		);
 		$data['view']              = 'registroponto/painel';
 		/* Informações para 'view' */
 		$data['titulo_pagina'] = 'Registro de Ponto';
 		/* Informações para 'rodape.php' */
 		$data['incluir_rodape'] = array(
 			$this->load->view('registroponto/painel_scripts', '', true),
+			'<script src="'.base_url('scripts/jquery-mask/jquery.mask.min.js').'"></script>',
+			'<script src="'.base_url('scripts/bootstrap-datepicker/js/bootstrap-datepicker.min.js').'"></script>',
+			'<script src="'.base_url('scripts/bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.min.js').'"></script>',
 			'<script src="'.base_url('scripts/painel.js').'"></script>'
 		);
 		/* Lógica do controlador */

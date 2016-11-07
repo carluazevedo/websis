@@ -50,4 +50,16 @@ class Registroponto_model extends CI_Model {
 			return $this->session->userdata('identity');
 		}
 	}
+
+	public function formata_data_mysql($data_mysql)
+	{
+		$data = date_format(date_create($data_mysql), 'd/m/Y');
+		return $data;
+	}
+
+	public function formata_hora_mysql($hora_mysql)
+	{
+		$hora = date_format(date_create($hora_mysql), 'H:i');
+		return $hora;
+	}
 }
