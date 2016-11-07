@@ -15,7 +15,12 @@
 							<div class="form-group">
 								<label for="data" class="col-sm-4 control-label" title="Data do registro">Data</label>
 								<div class="col-sm-4">
-									<input type="text" class="form-control" name="data" id="data">
+									<div class="input-group">
+										<input type="text" class="form-control" name="data" id="data">
+										<div class="input-group-addon">
+											<span class="glyphicon glyphicon-remove small" aria-hidden="true"></span>
+										</div>
+									</div><!-- /.input-group -->
 								</div>
 							</div><!-- /.form-group -->
 

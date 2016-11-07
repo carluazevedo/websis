@@ -5,10 +5,15 @@ $(document).ready(function() {
 	$('.acao-registrar').click(function() {
 		$('#modal-registrar').modal('toggle');
 	});
+	$('#data').mask('00/00/0000', {placeholder: '__/__/____'});
 	$('#data').datepicker({
+		assumeNearbyYear: 21,
+		clearBtn: true,
+		language: "pt-BR",
 		todayBtn: "linked",
-		language: "pt-BR"
+		todayHighlight: true
 	});
+	$('#entrada_1, #saida_1, #entrada_2, #saida_2').mask('00:00', {placeholder: '--:--'});
 });
 
 function editarRegistro(e)
