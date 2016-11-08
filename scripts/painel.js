@@ -1,4 +1,10 @@
 $(document).ready(function() {
+	$('input[type=text]').keydown(function(e) {
+		return e.which !== 13;
+	});
+	$('input[type=radio]').keydown(function(e) {
+		return e.which !== 13;
+	});
 	$('.acao-registrar').click(function() {
 		$('#modal-registrar').modal('toggle');
 	});
@@ -35,16 +41,16 @@ function registrarPonto()
 
 function editarRegistro(e)
 {
-	document.getElementsByTagName('button')['editar'].value = 'ok';
+	document.getElementsByTagName('button')['editar'].value = e.value;
 	document.forms['editar-registro'].setAttribute(
 			'method',
 			'post'
 	);
 	document.forms['editar-registro'].setAttribute(
 			'action',
-			site_url+'registroponto/editar/'+e.value
+			site_url+'registroponto/editar'
 	);
-	ajaxGetResponse(site_url+'registroponto/buscar/'+e.value, resultado);
+	ajaxPostResponse(site_url+'registroponto/buscar', e.value, resultado);
 	function resultado(callback)
 	{
 		dados_registro = JSON.parse(callback);
@@ -59,13 +65,24 @@ function editarRegistro(e)
 
 function removerRegistro(e)
 {
-	document.getElementsByTagName('button')['remover'].value = 'ok';
+	document.getElementsByTagName('button')['remover'].value = e.value;
 	document.forms['remover-registro'].setAttribute(
 			'method',
 			'post'
 	);
 	document.forms['remover-registro'].setAttribute(
 			'action',
-			site_url+'registroponto/remover/'+e.value
+			site_url+'registroponto/remover'
 	);
 }
+
+observacoes_registrar.style.textTransform = 'uppercase';
+observacoes_editar.style.textTransform = 'uppercase';
+
+document.forms['registrar-ponto'].addEventListener('submit', function() {
+	observacoes_registrar.value = observacoes_registrar.value.toUpperCase();
+});
+
+document.forms['editar-registro'].addEventListener('submit', function() {
+	observacoes_editar.value = observacoes_editar.value.toUpperCase();
+});

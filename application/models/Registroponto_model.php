@@ -72,6 +72,26 @@ class Registroponto_model extends CI_Model {
 		}
 	}
 
+	public function editar_registro($tabela, $id, $dados)
+	{
+		$this->db->where('id', $id);
+		$this->db->update($tabela, $dados);
+		if ($this->db->affected_rows() == '1') {
+			return true;
+		}
+		return false;
+	}
+
+	public function remover($tabela, $id)
+	{
+		$this->db->where('id', $id);
+		$this->db->delete($tabela);
+		if ($this->db->affected_rows() == '1') {
+			return true;
+		}
+		return false;
+	}
+
 	/* Funções para tratamento de exibição de dados */
 	public function usuario_atual()
 	{

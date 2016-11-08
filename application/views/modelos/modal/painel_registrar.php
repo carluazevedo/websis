@@ -11,12 +11,12 @@
 			<div class="modal-body">
 				<div class="container-fluid">
 					<div class="row">
-						<form class="form-horizontal" id="registrar-ponto" accept-charset="utf-8" onsubmit="converterCaixaAlta()">
+						<form class="form-horizontal" id="registrar-ponto" accept-charset="utf-8">
 							<div class="form-group">
 								<label for="data_registrar" class="col-sm-4 control-label" title="Data do registro">Data</label>
 								<div class="col-sm-4">
 									<div class="input-group">
-										<input type="text" class="form-control" name="data" id="data_registrar" required>
+										<input type="text" class="form-control" name="data" id="data_registrar" value="" required>
 										<div class="input-group-addon">
 											<span class="glyphicon glyphicon-remove small" aria-hidden="true"></span>
 										</div>

@@ -53,22 +53,24 @@ class Registroponto extends CI_Controller {
 	{
 		$this->input->post('data') OR exit(show_error('Acesso não permitido.', 403, '403 Forbidden'));
 		$dados_registro = array(
-				'data'        => $this->registroponto_model->formata_data_mysql($this->input->post('data')),
-				'folga'       => $this->input->post('folga'),
-				'entrada_1'   => $this->input->post('entrada_1'),
-				'saida_1'     => $this->input->post('saida_1'),
-				'entrada_2'   => $this->input->post('entrada_2'),
-				'saida_2'     => $this->input->post('saida_2'),
-				'observacoes' => $this->input->post('observacoes')
+			'data'        => $this->registroponto_model->formata_data_mysql($this->input->post('data')),
+			'folga'       => $this->input->post('folga'),
+			'entrada_1'   => $this->input->post('entrada_1'),
+			'saida_1'     => $this->input->post('saida_1'),
+			'entrada_2'   => $this->input->post('entrada_2'),
+			'saida_2'     => $this->input->post('saida_2'),
+			'observacoes' => $this->input->post('observacoes')
 		);
 		if ($this->registroponto_model->registrar('reg_ponto_carlu', $dados_registro) == true) {
-			$this->session->set_flashdata('sucesso', 'Viagem registrada com sucesso.');
+			$this->session->set_flashdata('sucesso', 'Registro gravado com sucesso.');
 			redirect(site_url(), 'refresh');
 		}
 	}
 
-	public function buscar($id)
+	public function buscar()
 	{
+		$this->input->post('valor') OR exit(show_error('Acesso não permitido.', 403, '403 Forbidden'));
+		$id = $this->input->post('valor');
 		$dados = $this->registroponto_model->buscar_registro('reg_ponto_carlu', 'id', $id);
 		$dados_registro = array(
 			'data'        => $this->registroponto_model->formata_data($dados->data),
@@ -86,6 +88,34 @@ class Registroponto extends CI_Controller {
 		} else {
 			echo "[]";
 		}
+	}
 
+	public function editar()
+	{
+		$this->input->post('editar') OR exit(show_error('Acesso não permitido.', 403, '403 Forbidden'));
+		$id = $this->input->post('editar');
+		$dados_registro = array(
+			'data'        => $this->registroponto_model->formata_data_mysql($this->input->post('data')),
+			'folga'       => $this->input->post('folga'),
+			'entrada_1'   => $this->input->post('entrada_1'),
+			'saida_1'     => $this->input->post('saida_1'),
+			'entrada_2'   => $this->input->post('entrada_2'),
+			'saida_2'     => $this->input->post('saida_2'),
+			'observacoes' => $this->input->post('observacoes')
+		);
+		if ($this->registroponto_model->editar_registro('reg_ponto_carlu', $id, $dados_registro) == true) {
+			$this->session->set_flashdata('sucesso', 'Registro editado com sucesso.');
+			redirect(site_url(), 'refresh');
+		}
+	}
+
+	public function remover()
+	{
+		$this->input->post('remover') OR exit(show_error('Acesso não permitido.', 403, '403 Forbidden'));
+		$id = $this->input->post('remover');
+		if ($this->registroponto_model->remover('reg_ponto_carlu', $id) == true) {
+			$this->session->set_flashdata('sucesso', 'Registro removido com sucesso.');
+			redirect(site_url(), 'refresh');
+		}
 	}
 }

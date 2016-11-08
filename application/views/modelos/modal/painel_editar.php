@@ -5,18 +5,18 @@
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title">
-					<span class="glyphicon glyphicon-plus small" aria-hidden="true"></span> Editar registro
+					<span class="glyphicon glyphicon-edit small" aria-hidden="true"></span> Editar registro
 				</h4>
 			</div>
 			<div class="modal-body">
 				<div class="container-fluid">
 					<div class="row">
-						<form class="form-horizontal" id="editar-registro" accept-charset="utf-8" onsubmit="converterCaixaAlta()">
+						<form class="form-horizontal" id="editar-registro" accept-charset="utf-8">
 							<div class="form-group">
 								<label for="data_editar" class="col-sm-4 control-label" title="Data do registro">Data</label>
 								<div class="col-sm-4">
 									<div class="input-group">
-										<input type="text" class="form-control" name="data" id="data_editar" required>
+										<input type="text" class="form-control" name="data" id="data_editar" value="" required>
 										<div class="input-group-addon">
 											<span class="glyphicon glyphicon-remove small" aria-hidden="true"></span>
 										</div>
