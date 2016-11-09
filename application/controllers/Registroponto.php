@@ -106,6 +106,9 @@ class Registroponto extends CI_Controller {
 		if ($this->registroponto_model->editar_registro('reg_ponto_carlu', $id, $dados_registro) == true) {
 			$this->session->set_flashdata('sucesso', 'Registro editado com sucesso.');
 			redirect(site_url(), 'refresh');
+		} else {
+			$this->session->set_flashdata('aviso', 'Não houve alterações no registro.');
+			redirect(site_url(), 'refresh');
 		}
 	}
 

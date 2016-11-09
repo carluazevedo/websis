@@ -16,8 +16,8 @@ $(document).ready(function() {
 	});
 	$('#data_registrar, #data_editar').mask('00/00/0000', {placeholder: '__/__/____'});
 	$('#data_registrar, #data_editar').datepicker({
-		assumeNearbyYear: 21,
 		clearBtn: true,
+		format: "dd/mm/yyyy",
 		language: "pt-BR",
 		todayBtn: "linked",
 		todayHighlight: true
@@ -53,11 +53,24 @@ function editarRegistro(e)
 	ajaxPostResponse(site_url+'registroponto/buscar', e.value, resultado);
 	function resultado(callback)
 	{
+		// Cria objeto com os dados do registro
 		dados_registro = JSON.parse(callback);
-		data_editar.value = dados_registro.data;		
+		// Insere os dados nos respectivos campos
+		$('#data_editar').datepicker('update', dados_registro.data);
+		if (dados_registro.folga == 0) {
+			folga_nao_editar.parentNode.setAttribute('class', 'btn btn-default active');
+			folga_sim_editar.parentNode.setAttribute('class', 'btn btn-default');
+			folga_nao_editar.checked = true;
+			folga_sim_editar.checked = false;
+		} else if (dados_registro.folga == 1) {
+			folga_nao_editar.parentNode.setAttribute('class', 'btn btn-default');
+			folga_sim_editar.parentNode.setAttribute('class', 'btn btn-default active');
+			folga_nao_editar.checked = false;
+			folga_sim_editar.checked = true;
+		}
 		entrada_1_editar.value = dados_registro.entrada_1;
 		saida_1_editar.value = dados_registro.saida_1;
-		entrada_2_editar.value = dados_registro.entrada_2;	
+		entrada_2_editar.value = dados_registro.entrada_2;
 		saida_2_editar.value = dados_registro.saida_2;
 		observacoes_editar.value = dados_registro.observacoes;
 	}

@@ -25,14 +25,14 @@
 							</div><!-- /.form-group -->
 
 							<div class="form-group">
-								<label for="folga_editar" class="col-sm-4 control-label" title="Dia de folga">Folga</label>
+								<label class="col-sm-4 control-label" title="Dia de folga">Folga</label>
 								<div class="col-sm-4">
 									<div class="btn-group btn-group-justified" data-toggle="buttons">
 										<label class="btn btn-default">
-											<input type="radio" name="folga" value="0" autocomplete="off" id="folga_editar" required> NÃO
+											<input type="radio" name="folga" value="0" autocomplete="off" id="folga_nao_editar" required> NÃO
 										</label>
 										<label class="btn btn-default">
-											<input type="radio" name="folga" value="1" autocomplete="off"> SIM
+											<input type="radio" name="folga" value="1" autocomplete="off" id="folga_sim_editar"> SIM
 										</label>
 									</div><!-- /.btn-group -->
 								</div>

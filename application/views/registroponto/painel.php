@@ -18,7 +18,15 @@
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
 					<span class="glyphicon glyphicon-ok-sign"></span> <?php echo $this->session->flashdata('sucesso'); ?>
 				</div>
+				<?php elseif ($this->session->flashdata('aviso') != null) : ?>
+				
+				<!-- Alerta de aviso -->
+				<div class="alert alert-warning alert-dismissible fade in" role="alert">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+					<span class="glyphicon glyphicon-alert"></span> <?php echo $this->session->flashdata('aviso'); ?>
+				</div>
 				<?php endif; ?>
+
 				<div class="table-responsive">
 					<table class="table table-condensed table-hover">
 						<thead>
