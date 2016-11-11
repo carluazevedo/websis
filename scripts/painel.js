@@ -58,10 +58,10 @@ function editarRegistro(e)
 		// Insere os dados nos respectivos campos
 		$('#data_editar').datepicker('update', dados_registro.data);
 		if (dados_registro.folga == 0) {
-			folga_nao_editar.parentNode.setAttribute('class', 'btn btn-default active');
 			folga_sim_editar.parentNode.setAttribute('class', 'btn btn-default');
-			folga_nao_editar.checked = true;
+			folga_nao_editar.parentNode.setAttribute('class', 'btn btn-default active');
 			folga_sim_editar.checked = false;
+			folga_nao_editar.checked = true;
 		} else if (dados_registro.folga == 1) {
 			folga_nao_editar.parentNode.setAttribute('class', 'btn btn-default');
 			folga_sim_editar.parentNode.setAttribute('class', 'btn btn-default active');
@@ -89,13 +89,25 @@ function removerRegistro(e)
 	);
 }
 
-observacoes_registrar.style.textTransform = 'uppercase';
-observacoes_editar.style.textTransform = 'uppercase';
+folga_nao_registrar.addEventListener('focus', function() {
+	entrada_1_registrar.readOnly = false;
+	saida_1_registrar.readOnly = false;
+	entrada_2_registrar.readOnly = false;
+	saida_2_registrar.readOnly = false;
+});
+folga_sim_registrar.addEventListener('focus', function() {
+	entrada_1_registrar.readOnly = true;
+	saida_1_registrar.readOnly = true;
+	entrada_2_registrar.readOnly = true;
+	saida_2_registrar.readOnly = true;
+});
 
+/* < Converter valores para caixa alta > */
+observacoes_registrar.style.textTransform = 'uppercase';
 document.forms['registrar-ponto'].addEventListener('submit', function() {
 	observacoes_registrar.value = observacoes_registrar.value.toUpperCase();
 });
-
+observacoes_editar.style.textTransform = 'uppercase';
 document.forms['editar-registro'].addEventListener('submit', function() {
 	observacoes_editar.value = observacoes_editar.value.toUpperCase();
 });

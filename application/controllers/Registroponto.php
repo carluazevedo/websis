@@ -44,6 +44,7 @@ class Registroponto extends CI_Controller {
 			'observacoes'
 		);
 		$data['registros'] = $this->registroponto_model->listar_registros('reg_ponto_carlu', $colunas);
+		$this->config->set_item('total_rows', $this->registroponto_model->listar_total_registros('reg_ponto_carlu'));
 		/* Conclusão */
 		$this->load->view('modelos/cabecalho', $data);
 		$this->load->view('modelos/rodape', $data);
