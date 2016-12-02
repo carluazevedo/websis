@@ -15,9 +15,12 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li>
-						<a href="#" class="acao-registrar" onclick="registrarPonto()">Registrar Ponto</a>
+					<li<?php if (isset($nav_registroponto)) echo ' class="active"'; ?>>
+						<a href="<?php echo (isset($nav_registroponto)) ? '#' : site_url(); ?>">Registro de Ponto</a>
 					</li>
+                    <li<?php if (isset($nav_marketingdigital)) echo ' class="active"'; ?>>
+                        <a href="<?php echo (isset($nav_marketingdigital)) ? '#' : site_url('marketingdigital'); ?>">Marketing Digital</a>
+                    </li>
 				</ul>
 
 				<div class="navbar-right">
@@ -25,7 +28,7 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 								<span class="glyphicon glyphicon-user" aria-hidden="true"></span> 
-								<?php echo $this->registroponto_model->usuario_atual(); ?> <span class="caret"></span>
+								<?php echo $this->geral_model->usuario_atual(); ?> <span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
 								<li><a href="<?php echo site_url('auth/logout'); ?>">Desconectar</a></li>

@@ -31,4 +31,3 @@
 
 	<body>
 		<main>
-<?php isset($view) ? $this->load->view($view) : show_404('', FALSE); ?>

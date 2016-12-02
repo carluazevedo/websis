@@ -56,7 +56,9 @@ class Auth extends CI_Controller {
 				link_tag('styles/geral.css'),
 				link_tag('styles/login.css')
 		);
-		$data['view']              = 'auth/login';
+
+		/* Informações para 'view' */
+		$view = 'auth/login';
 
 		//validate form input
 		$this->form_validation->set_rules('identity', 'Email', 'required');
@@ -90,6 +92,7 @@ class Auth extends CI_Controller {
 			$data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 
 			$this->load->view('modelos/cabecalho', $data);
+			$this->load->view($view, $data);
 			$this->load->view('modelos/rodape', $data);
 		}
 	}

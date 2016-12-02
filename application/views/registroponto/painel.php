@@ -9,17 +9,24 @@
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1">
 				<div class="page-header">
+					<nav>
+						<ul class="nav nav-pills pull-right">
+							<li role="presentation" class="active">
+								<a href="#" class="acao-registrar" onclick="registrarPonto()">Registrar</a>
+							</li>
+						</ul>
+					</nav>
 					<h1><?php echo $titulo_pagina; ?></h1>
 				</div>
 				<?php if ($this->session->flashdata('sucesso') != null) : ?>
-				
+
 				<!-- Alerta de sucesso -->
 				<div class="alert alert-success alert-dismissible fade in" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
 					<span class="glyphicon glyphicon-ok-sign"></span> <?php echo $this->session->flashdata('sucesso'); ?>
 				</div>
 				<?php elseif ($this->session->flashdata('aviso') != null) : ?>
-				
+
 				<!-- Alerta de aviso -->
 				<div class="alert alert-warning alert-dismissible fade in" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>

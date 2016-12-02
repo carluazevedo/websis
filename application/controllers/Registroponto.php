@@ -9,6 +9,7 @@ class Registroponto extends CI_Controller {
 	{
 		parent::__construct();
 		if (!$this->session->has_userdata('identity')) redirect('auth');
+		$this->load->model('geral_model');
 		$this->load->model('registroponto_model');
 	}
 
@@ -20,9 +21,10 @@ class Registroponto extends CI_Controller {
 			link_tag('styles/geral.css'),				
 			link_tag('scripts/bootstrap-datepicker/css/bootstrap-datepicker3.min.css')				
 		);
-		$data['view']              = 'registroponto/painel';
 		/* Informações para 'view' */
+		$view = 'registroponto/painel';
 		$data['titulo_pagina'] = 'Registro de Ponto';
+		$data['nav_registroponto'] = true;
 		/* Informações para 'rodape.php' */
 		$data['incluir_rodape'] = array(
 			$this->load->view('registroponto/painel_scripts', '', true),
@@ -47,6 +49,7 @@ class Registroponto extends CI_Controller {
 		$this->config->set_item('total_rows', $this->registroponto_model->listar_total_registros('reg_ponto_carlu'));
 		/* Conclusão */
 		$this->load->view('modelos/cabecalho', $data);
+		$this->load->view($view, $data);
 		$this->load->view('modelos/rodape', $data);
 	}
 
