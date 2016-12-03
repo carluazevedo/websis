@@ -18,8 +18,8 @@
 					<li<?php if (isset($nav_registroponto)) echo ' class="active"'; ?>>
 						<a href="<?php echo (isset($nav_registroponto)) ? '#' : site_url(); ?>">Registro de Ponto</a>
 					</li>
-                    <li<?php if (isset($nav_marketingdigital)) echo ' class="active"'; ?>>
-                        <a href="<?php echo (isset($nav_marketingdigital)) ? '#' : site_url('marketingdigital'); ?>">Marketing Digital</a>
+                    <li<?php if (isset($nav_infoprodutos)) echo ' class="active"'; ?>>
+                        <a href="<?php echo (isset($nav_infoprodutos)) ? '#' : site_url('infoprodutos'); ?>">Infoprodutos</a>
                     </li>
 				</ul>
 

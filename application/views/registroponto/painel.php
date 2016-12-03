@@ -83,6 +83,7 @@
 							</tr>
 								<?php endforeach; ?>
 							<?php endif; ?>
+
 						</tbody>
 						<tfoot>
 							<!-- Última linha em branco da tabela -->

@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS `infoprod` (
 	`produtor` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
 	`segmento` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
 	`hotleads` tinyint(1) NOT NULL,
+	`afiliado` tinyint(1) NOT NULL,
 	`observacoes` varchar(256) NULL,
 	PRIMARY KEY (`id`)
 ) DEFAULT CHARSET=utf8;
@@ -21,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `infoprod` (
 #
 
 CREATE TABLE IF NOT EXISTS `infoprod_links` (
-	`id` int(4) UNSIGNED NOT NULL,
+	`id` int(4) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`id_produto` int(10) UNSIGNED NOT NULL,
 	`descricao` varchar(128) COLLATE utf8_unicode_ci NULL,
 	`link` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
