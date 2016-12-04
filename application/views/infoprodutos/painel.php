@@ -58,7 +58,7 @@
 					<table class="table table-condensed table-hover">
 						<thead>
 							<tr class="active">
-								<th style="width: 70px">ID</th>
+								<th style="width: 40px">ID</th>
 								<th>PRODUTO</th>
 								<th>DESCRIÇÃO</th>
 								<th>LINK</th>

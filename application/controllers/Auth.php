@@ -60,8 +60,11 @@ class Auth extends CI_Controller {
 		/* Informações para 'view' */
 		$view = 'auth/login';
 
+		/* Informações para 'rodape.php' */
+		$data['incluir_rodape'] = array('<script src="'.base_url('scripts/auth_login.js').'"></script>');
+
 		//validate form input
-		$this->form_validation->set_rules('identity', 'Email', 'required');
+		$this->form_validation->set_rules('identity', 'Usuário', 'required');
 		$this->form_validation->set_rules('password', 'Senha', 'required');
 
 		if ($this->form_validation->run() == true)

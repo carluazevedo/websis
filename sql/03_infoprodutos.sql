@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `infoprod_links` (
 	`id_produto` int(10) UNSIGNED NOT NULL,
 	`descricao` varchar(128) COLLATE utf8_unicode_ci NULL,
 	`link` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-	`destino` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+	`destino` varchar(128) COLLATE utf8_unicode_ci NULL,
 	`tipo` varchar(64) COLLATE utf8_unicode_ci NULL,
 	PRIMARY KEY (`id`)
 ) DEFAULT CHARSET=utf8;

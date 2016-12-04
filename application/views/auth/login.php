@@ -14,11 +14,18 @@
 			<label for="identity" class="control-label sr-only">Usuário</label>
 			<input type="text" id="identity" name="identity" class="form-control" value="<?php echo set_value('identity'); ?>" placeholder="Usuário" />
 			<label for="password" class="control-label sr-only">Senha</label>
-			<input type="password" id="password" name="password" class="form-control" placeholder="Senha" />
+			<input type="password" id="password" name="password" class="form-control" placeholder="Senha" autocomplete="off" />
 
 			<div class="custom-error"><?php echo $message; ?></div>
-			
-			<div class="checkbox">
+
+			<div class="checkbox-inline">
+				<label>
+					<input type="checkbox" id="exibir" />
+					Exibir senha
+				</label>
+			</div>
+
+			<div class="checkbox-inline">
 				<label>
 					<input type="checkbox" id="remember" name="remember" value="1" />
 					Continuar conectado
