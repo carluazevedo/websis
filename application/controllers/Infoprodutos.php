@@ -33,8 +33,9 @@ class Infoprodutos extends CI_Controller {
 			'<script src="'.base_url('scripts/ajax_lib.js').'"></script>'
 		);
 		/* Lógica do controlador */
-		$data['produtos'] = $this->infoprodutos_model->listar_registros('infoprod', '', 'produto');
-		$data['links']    = $this->infoprodutos_model->listar_registros('infoprod_links', '', 'id');
+		$data['produtos']     = $this->infoprodutos_model->listar_registros('infoprod', '', 'produto');
+		$data['links']        = $this->infoprodutos_model->listar_registros('infoprod_links', '', 'id');
+		$data['campanhas']    = $this->infoprodutos_model->listar_registros('infoprod_camp', '', 'id');
 		/* Conclusão */
 		$this->load->view('modelos/cabecalho', $data);
 		$this->load->view($view, $data);

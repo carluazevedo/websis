@@ -35,6 +35,17 @@ CREATE TABLE IF NOT EXISTS `infoprod_links` (
 # Table structure for table 'infoprod_camp'
 #
 
+CREATE TABLE IF NOT EXISTS `infoprod_camp` (
+	`id` int(4) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`id_produto` int(10) UNSIGNED NOT NULL,
+	`data` date NOT NULL DEFAULT '0000-00-00',
+	`plataforma` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+	`metodo` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+	`midia` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+	`id_midia` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+	PRIMARY KEY (`id`)
+) DEFAULT CHARSET=utf8;
+
 #
 # Table structure for table 'infoprod_midias'
 #

@@ -4,8 +4,16 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1">
+				<!-- Produtos -->
 				<div class="page-header">
-					<h1><?php echo $titulo_pagina; ?></h1>
+					<nav>
+						<ul class="nav nav-pills pull-right">
+							<li role="presentation" class="active">
+								<a href="#" class="registrar-produto" onclick="registrarProduto()">Registrar</a>
+							</li>
+						</ul>
+					</nav>
+					<h1><?php echo 'Produtos'; ?></h1>
 				</div>
 				<div class="table-responsive">
 					<table class="table table-condensed table-hover">
@@ -49,10 +57,18 @@
 							</tr>
 						</tfoot>
 					</table>
-				</div><!-- /.table-responsive -->
+				</div><!-- /Produtos -->
 
+				<!-- Links -->
 				<div class="page-header">
-					<h1><?php echo $titulo_pagina.' - Links'; ?></h1>
+					<nav>
+						<ul class="nav nav-pills pull-right">
+							<li role="presentation" class="active">
+								<a href="#" class="registrar-link" onclick="registrarLink()">Registrar</a>
+							</li>
+						</ul>
+					</nav>
+					<h1><?php echo 'Links'; ?></h1>
 				</div>
 				<div class="table-responsive">
 					<table class="table table-condensed table-hover">
@@ -79,8 +95,8 @@
 								<td><?php echo $lnks->id; ?></td>
 								<td><?php echo $lnks->id_produto; ?></td>
 								<td><?php echo $lnks->descricao; ?></td>
-								<td><input type="text" class="form-control input-sm" value="<?php echo $lnks->link; ?>" readonly ></td>
-								<td><input type="text" class="form-control input-sm" value="<?php echo $lnks->destino; ?>" readonly ></td>
+								<td><input type="button" class="btn btn-default btn-block" style="text-align: left" value="<?php echo $lnks->link; ?>"></td>
+								<td><input type="button" class="btn btn-default btn-block" style="text-align: left" value="<?php echo $lnks->destino; ?>"></td>
 								<td><?php echo $lnks->tipo; ?></td>
 							</tr>
 								<?php endforeach; ?>
@@ -94,7 +110,62 @@
 							</tr>
 						</tfoot>
 					</table>
-				</div><!-- /.table-responsive -->
+				</div><!-- Links -->
+
+				<!-- Campanhas -->
+				<div class="page-header">
+					<nav>
+						<ul class="nav nav-pills pull-right">
+							<li role="presentation" class="active">
+								<a href="#" class="registrar-campanha" onclick="registrarCampanha()">Registrar</a>
+							</li>
+						</ul>
+					</nav>
+					<h1><?php echo 'Campanhas'; ?></h1>
+				</div>
+				<div class="table-responsive">
+					<table class="table table-condensed table-hover">
+						<thead>
+							<tr class="active">
+								<th style="width: 40px">ID</th>
+								<th>PRODUTO</th>
+								<th>DATA</th>
+								<th>PLATAFORMA</th>
+								<th>MÉTODO</th>
+								<th>MÍDIA</th>
+								<th>ID MÍDIA</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php if (!$campanhas) : ?>
+
+							<tr>
+								<td class="text-center danger" colspan="7">Não há registros.</td>
+							</tr>
+							<?php else : ?>
+								<?php foreach ($campanhas as $camp) : ?>
+
+							<tr>
+								<td><?php echo $camp->id; ?></td>
+								<td><?php echo $camp->id_produto; ?></td>
+								<td><?php echo $camp->data; ?></td>
+								<td><?php echo $camp->plataforma; ?></td>
+								<td><?php echo $camp->metodo; ?></td>
+								<td><?php echo $camp->midia; ?></td>
+								<td><?php echo $camp->id_midia; ?></td>
+							</tr>
+								<?php endforeach; ?>
+							<?php endif; ?>
+
+						</tbody>
+						<tfoot>
+							<!-- Última linha em branco da tabela -->
+							<tr>
+								<td colspan="7"></td>
+							</tr>
+						</tfoot>
+					</table>
+				</div><!-- /Campanhas -->
 			</div><!-- /.col-sm-12 -->
 		</div><!-- /.row -->
 	</div><!-- /.container-fluid -->
