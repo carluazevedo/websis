@@ -17,11 +17,10 @@ class Infoprodutos_model extends CI_Model {
 		return false;
 	}
 
-	public function listar_registros($tabela, $colunas = '', $ordenar, $limite = '', $deslocamento = '', $resultado_matriz = false)
+	public function listar_registros($tabela, $colunas = '', $ordenar = 'id', $resultado_matriz = false)
 	{
 		$query = $this->db->select($colunas)
 						  ->order_by($ordenar, 'ASC')
-						  ->limit($limite, $deslocamento)
 						  ->get($tabela);
 		if ($resultado_matriz == false) {
 			return $query->result();
