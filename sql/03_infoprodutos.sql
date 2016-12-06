@@ -32,6 +32,21 @@ CREATE TABLE IF NOT EXISTS `infoprod_links` (
 ) DEFAULT CHARSET=utf8;
 
 #
+# Table structure for table 'infoprod_midias'
+#
+
+CREATE TABLE IF NOT EXISTS `infoprod_midias` (
+  `id` int(4) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_produto` int(10) UNSIGNED NOT NULL,
+  `id_midia` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `descricao` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `tipo` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `dimensoes` varchar(10) COLLATE utf8_unicode_ci NULL,
+  `midia` varchar(192) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) DEFAULT CHARSET=utf8;
+
+#
 # Table structure for table 'infoprod_camp'
 #
 
@@ -45,19 +60,4 @@ CREATE TABLE IF NOT EXISTS `infoprod_camp` (
 	`midia` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
 	`id_midia` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
 	PRIMARY KEY (`id`)
-) DEFAULT CHARSET=utf8;
-
-#
-# Table structure for table 'infoprod_midias'
-#
-
-CREATE TABLE IF NOT EXISTS `infoprod_midias` (
-  `id` int(4) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `id_produto` int(10) UNSIGNED NOT NULL,
-  `id_midia` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `descricao` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  `tipo` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `dimensoes` varchar(10) COLLATE utf8_unicode_ci NULL,
-  `midia` varchar(192) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
 ) DEFAULT CHARSET=utf8;

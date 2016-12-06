@@ -3,20 +3,20 @@
 <section>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-sm-12">
+			<div class="col-sm-10 col-sm-offset-1">
 				<!-- Produtos -->
 				<div class="page-header">
 					<nav>
 						<ul class="nav nav-pills pull-right">
 							<li role="presentation" class="active">
-								<a href="#" class="registrar-produto" onclick="registrarProduto()">Registrar</a>
+								<a href="javascript:void(0)" class="registrar-produto" onclick="registrarProduto()">Registrar</a>
 							</li>
 						</ul>
 					</nav>
 					<h1><?php echo 'Produtos'; ?></h1>
 				</div>
 				<div class="table-responsive">
-					<table class="table table-condensed table-hover">
+					<table class="table table-hover text-nowrap">
 						<thead>
 							<tr class="active">
 								<th style="width: 70px">ID</th>
@@ -64,14 +64,14 @@
 					<nav>
 						<ul class="nav nav-pills pull-right">
 							<li role="presentation" class="active">
-								<a href="#" class="registrar-link" onclick="registrarLink()">Registrar</a>
+								<a href="javascript:void(0)" class="registrar-link" onclick="registrarLink()">Registrar</a>
 							</li>
 						</ul>
 					</nav>
 					<h1><?php echo 'Links'; ?></h1>
 				</div>
 				<div class="table-responsive">
-					<table class="table table-condensed table-hover">
+					<table class="table table-hover text-nowrap">
 						<thead>
 							<tr class="active">
 								<th style="width: 40px">ID</th>
@@ -95,8 +95,8 @@
 								<td><?php echo $lnks->id; ?></td>
 								<td><?php echo $this->infoprodutos_model->buscar_registro('infoprod', 'id', $lnks->id_produto)->produto; ?></td>
 								<td><?php echo $lnks->descricao; ?></td>
-								<td><input type="button" class="btn btn-default btn-block" style="text-align: left" value="<?php echo $lnks->link; ?>"></td>
-								<td><input type="button" class="btn btn-default btn-block" style="text-align: left" value="<?php echo $lnks->destino; ?>"></td>
+								<td><?php printf('<a href="%s" onclick="return false">%s</a>', $lnks->link, $lnks->link); ?></td>
+								<td><?php printf('<a href="%s" target="_blank">%s</a>', $lnks->destino, $lnks->destino); ?></td>
 								<td><?php echo $lnks->tipo; ?></td>
 							</tr>
 								<?php endforeach; ?>
@@ -112,19 +112,74 @@
 					</table>
 				</div><!-- Links -->
 
+				<!-- Mídias -->
+				<div class="page-header">
+					<nav>
+						<ul class="nav nav-pills pull-right">
+							<li role="presentation" class="active">
+								<a href="javascript:void(0)" class="registrar-midia" onclick="registrarMidia()">Registrar</a>
+							</li>
+						</ul>
+					</nav>
+					<h1><?php echo 'Mídias'; ?></h1>
+				</div>
+				<div class="table-responsive">
+					<table class="table table-hover text-nowrap">
+						<thead>
+							<tr class="active">
+								<th style="width: 40px">ID</th>
+								<th>PRODUTO</th>
+								<th>ID MÍDIA</th>
+								<th>DESCRIÇÃO</th>
+								<th>TIPO</th>
+								<th>DIMENSÕES</th>
+								<th>MÍDIA</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php if (!$midias) : ?>
+
+							<tr>
+								<td class="text-center danger" colspan="7">Não há registros.</td>
+							</tr>
+							<?php else : ?>
+								<?php foreach ($midias as $mid) : ?>
+
+							<tr>
+								<td><?php echo $mid->id; ?></td>
+								<td><?php echo $this->infoprodutos_model->buscar_registro('infoprod', 'id', $mid->id_produto)->produto; ?></td>
+								<td><?php echo $mid->id_midia; ?></td>
+								<td><?php echo $mid->descricao; ?></td>
+								<td><?php echo $mid->tipo; ?></td>
+								<td><?php echo $mid->dimensoes; ?></td>
+								<td><?php printf('<a href="%s" target="_blank">Link</a>', $mid->midia); ?></td>
+							</tr>
+								<?php endforeach; ?>
+							<?php endif; ?>
+
+						</tbody>
+						<tfoot>
+							<!-- Última linha em branco da tabela -->
+							<tr>
+								<td colspan="7"></td>
+							</tr>
+						</tfoot>
+					</table>
+				</div><!-- /Mídias -->
+
 				<!-- Campanhas -->
 				<div class="page-header">
 					<nav>
 						<ul class="nav nav-pills pull-right">
 							<li role="presentation" class="active">
-								<a href="#" class="registrar-campanha" onclick="registrarCampanha()">Registrar</a>
+								<a href="javascript:void(0)" class="registrar-campanha" onclick="registrarCampanha()">Registrar</a>
 							</li>
 						</ul>
 					</nav>
 					<h1><?php echo 'Campanhas'; ?></h1>
 				</div>
 				<div class="table-responsive">
-					<table class="table table-condensed table-hover">
+					<table class="table table-hover text-nowrap">
 						<thead>
 							<tr class="active">
 								<th style="width: 40px">ID</th>
@@ -168,61 +223,6 @@
 						</tfoot>
 					</table>
 				</div><!-- /Campanhas -->
-
-				<!-- Mídias -->
-				<div class="page-header">
-					<nav>
-						<ul class="nav nav-pills pull-right">
-							<li role="presentation" class="active">
-								<a href="#" class="registrar-midia" onclick="registrarMidia()">Registrar</a>
-							</li>
-						</ul>
-					</nav>
-					<h1><?php echo 'Mídias'; ?></h1>
-				</div>
-				<div class="table-responsive">
-					<table class="table table-condensed table-hover">
-						<thead>
-							<tr class="active">
-								<th style="width: 40px">ID</th>
-								<th>PRODUTO</th>
-								<th>ID MÍDIA</th>
-								<th>DESCRIÇÃO</th>
-								<th>TIPO</th>
-								<th>DIMENSÕES</th>
-								<th>MÍDIA</th>
-							</tr>
-						</thead>
-						<tbody>
-							<?php if (!$midias) : ?>
-
-							<tr>
-								<td class="text-center danger" colspan="7">Não há registros.</td>
-							</tr>
-							<?php else : ?>
-								<?php foreach ($midias as $mid) : ?>
-
-							<tr>
-								<td><?php echo $mid->id; ?></td>
-								<td><?php echo $this->infoprodutos_model->buscar_registro('infoprod', 'id', $mid->id_produto)->produto; ?></td>
-								<td><?php echo $mid->id_midia; ?></td>
-								<td><?php echo $mid->descricao; ?></td>
-								<td><?php echo $mid->tipo; ?></td>
-								<td><?php echo $mid->dimensoes; ?></td>
-								<td><input type="button" class="btn btn-default btn-block" style="text-align: left" value="<?php echo $mid->midia; ?>"></td>
-							</tr>
-								<?php endforeach; ?>
-							<?php endif; ?>
-
-						</tbody>
-						<tfoot>
-							<!-- Última linha em branco da tabela -->
-							<tr>
-								<td colspan="7"></td>
-							</tr>
-						</tfoot>
-					</table>
-				</div><!-- /Mídias -->
 
 			</div><!-- /.col-sm-12 -->
 		</div><!-- /.row -->

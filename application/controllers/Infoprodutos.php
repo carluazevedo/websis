@@ -35,8 +35,8 @@ class Infoprodutos extends CI_Controller {
 		/* Lógica do controlador */
 		$data['produtos']  = $this->infoprodutos_model->listar_registros('infoprod', '', 'produto');
 		$data['links']     = $this->infoprodutos_model->listar_registros('infoprod_links');
-		$data['campanhas'] = $this->infoprodutos_model->listar_registros('infoprod_camp');
 		$data['midias']    = $this->infoprodutos_model->listar_registros('infoprod_midias');
+		$data['campanhas'] = $this->infoprodutos_model->listar_registros('infoprod_camp');
 		/* Conclusão */
 		$this->load->view('modelos/cabecalho', $data);
 		$this->load->view($view, $data);
