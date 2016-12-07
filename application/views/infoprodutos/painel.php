@@ -18,7 +18,7 @@
 					<h1><?php echo 'Produtos'; ?></h1>
 				</div>
 				<div class="table-responsive">
-					<table class="table table-hover text-nowrap">
+					<table class="table table-hover text-nowrap" id="produtos">
 						<thead>
 							<tr class="active">
 								<th style="width: 70px">ID</th>
@@ -73,7 +73,7 @@
 					<h1><?php echo 'Links'; ?></h1>
 				</div>
 				<div class="table-responsive">
-					<table class="table table-hover text-nowrap">
+					<table class="table table-hover text-nowrap" id="links">
 						<thead>
 							<tr class="active">
 								<th style="width: 40px">ID</th>
@@ -126,7 +126,7 @@
 					<h1><?php echo 'Mídias'; ?></h1>
 				</div>
 				<div class="table-responsive">
-					<table class="table table-condensed table-hover text-nowrap">
+					<table class="table table-condensed table-hover text-nowrap" id="midias">
 						<thead>
 							<tr class="active">
 								<th style="width: 40px">ID</th>
@@ -181,7 +181,7 @@
 					<h1><?php echo 'Campanhas'; ?></h1>
 				</div>
 				<div class="table-responsive">
-					<table class="table table-condensed table-hover text-nowrap">
+					<table class="table table-condensed table-hover text-nowrap" id="campanhas">
 						<thead>
 							<tr class="active">
 								<th style="width: 40px">ID</th>
@@ -204,7 +204,7 @@
 							<?php else : ?>
 								<?php foreach ($campanhas as $camp) : ?>
 
-							<tr>
+							<tr id="<?php echo 'campanha'.$camp->id; ?>">
 								<td><?php echo $camp->id; ?></td>
 								<td><?php echo $this->infoprodutos_model->buscar_registro('infoprod', 'id', $camp->id_produto)->produto; ?></td>
 								<td><?php echo $this->infoprodutos_model->buscar_registro('infoprod_links', 'id', $camp->link)->link; ?></td>
