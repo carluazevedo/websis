@@ -53,8 +53,8 @@ CREATE TABLE IF NOT EXISTS `infoprod_midias` (
 CREATE TABLE IF NOT EXISTS `infoprod_camp` (
 	`id` int(4) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`id_produto` int(10) UNSIGNED NOT NULL,
-	`data` date NOT NULL DEFAULT '0000-00-00',
 	`link` int(4) UNSIGNED NOT NULL,
+	`data` int(6) UNSIGNED NULL,
 	`plataforma` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
 	`metodo` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
 	`midia` varchar(10) COLLATE utf8_unicode_ci NOT NULL,

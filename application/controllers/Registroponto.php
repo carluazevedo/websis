@@ -31,8 +31,8 @@ class Registroponto extends CI_Controller {
 			'<script src="'.base_url('scripts/jquery-mask/jquery.mask.min.js').'"></script>',
 			'<script src="'.base_url('scripts/bootstrap-datepicker/js/bootstrap-datepicker.min.js').'"></script>',
 			'<script src="'.base_url('scripts/bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.min.js').'"></script>',
-			'<script src="'.base_url('scripts/ajax_lib.js').'"></script>',
-			'<script src="'.base_url('scripts/painel.js').'"></script>'
+			'<script src="'.base_url('scripts/libs/ajax_lib.js').'"></script>',
+			'<script src="'.base_url('scripts/registroponto_painel.js').'"></script>'
 		);
 		/* Lógica do controlador */
 		$colunas = array(

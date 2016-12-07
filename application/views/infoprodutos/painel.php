@@ -1,5 +1,7 @@
 <?php $this->load->view('modelos/barra_nav'); ?>
 
+<?php $this->load->view('modelos/modal/painel_infoprod_gerar'); ?>
+
 <section>
 	<div class="container-fluid">
 		<div class="row">
@@ -9,7 +11,7 @@
 					<nav>
 						<ul class="nav nav-pills pull-right">
 							<li role="presentation" class="active">
-								<a href="javascript:void(0)" class="registrar-produto" onclick="registrarProduto()">Registrar</a>
+								<a href="javascript:void(0)" id="registrar-produto" onclick="registrarProduto()">Registrar</a>
 							</li>
 						</ul>
 					</nav>
@@ -64,7 +66,7 @@
 					<nav>
 						<ul class="nav nav-pills pull-right">
 							<li role="presentation" class="active">
-								<a href="javascript:void(0)" class="registrar-link" onclick="registrarLink()">Registrar</a>
+								<a href="javascript:void(0)" id="registrar-link" onclick="registrarLink()">Registrar</a>
 							</li>
 						</ul>
 					</nav>
@@ -117,14 +119,14 @@
 					<nav>
 						<ul class="nav nav-pills pull-right">
 							<li role="presentation" class="active">
-								<a href="javascript:void(0)" class="registrar-midia" onclick="registrarMidia()">Registrar</a>
+								<a href="javascript:void(0)" id="registrar-midia" onclick="registrarMidia()">Registrar</a>
 							</li>
 						</ul>
 					</nav>
 					<h1><?php echo 'Mídias'; ?></h1>
 				</div>
 				<div class="table-responsive">
-					<table class="table table-hover text-nowrap">
+					<table class="table table-condensed table-hover text-nowrap">
 						<thead>
 							<tr class="active">
 								<th style="width: 40px">ID</th>
@@ -133,7 +135,7 @@
 								<th>DESCRIÇÃO</th>
 								<th>TIPO</th>
 								<th>DIMENSÕES</th>
-								<th>MÍDIA</th>
+								<th style="width: 55px">MÍDIA</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -152,7 +154,7 @@
 								<td><?php echo $mid->descricao; ?></td>
 								<td><?php echo $mid->tipo; ?></td>
 								<td><?php echo $mid->dimensoes; ?></td>
-								<td><?php printf('<a href="%s" target="_blank">Link</a>', $mid->midia); ?></td>
+								<td><?php printf('<a href="%s" class="btn btn-default btn-sm" target="_blank">Link</a>', $mid->midia); ?></td>
 							</tr>
 								<?php endforeach; ?>
 							<?php endif; ?>
@@ -172,31 +174,32 @@
 					<nav>
 						<ul class="nav nav-pills pull-right">
 							<li role="presentation" class="active">
-								<a href="javascript:void(0)" class="registrar-campanha" onclick="registrarCampanha()">Registrar</a>
+								<a href="javascript:void(0)" id="registrar-campanha" onclick="registrarCampanha()">Registrar</a>
 							</li>
 						</ul>
 					</nav>
 					<h1><?php echo 'Campanhas'; ?></h1>
 				</div>
 				<div class="table-responsive">
-					<table class="table table-hover text-nowrap">
+					<table class="table table-condensed table-hover text-nowrap">
 						<thead>
 							<tr class="active">
 								<th style="width: 40px">ID</th>
 								<th>PRODUTO</th>
-								<th>DATA</th>
 								<th>LINK</th>
+								<th>DATA</th>
 								<th>PLATAFORMA</th>
 								<th>MÉTODO</th>
 								<th>MÍDIA</th>
 								<th>ID MÍDIA</th>
+								<th style="width: 60px">AÇÕES</th>
 							</tr>
 						</thead>
 						<tbody>
 							<?php if (!$campanhas) : ?>
 
 							<tr>
-								<td class="text-center danger" colspan="8">Não há registros.</td>
+								<td class="text-center danger" colspan="9">Não há registros.</td>
 							</tr>
 							<?php else : ?>
 								<?php foreach ($campanhas as $camp) : ?>
@@ -204,12 +207,17 @@
 							<tr>
 								<td><?php echo $camp->id; ?></td>
 								<td><?php echo $this->infoprodutos_model->buscar_registro('infoprod', 'id', $camp->id_produto)->produto; ?></td>
-								<td><?php echo $this->infoprodutos_model->formata_data($camp->data); ?></td>
 								<td><?php echo $this->infoprodutos_model->buscar_registro('infoprod_links', 'id', $camp->link)->link; ?></td>
+								<td><?php echo $camp->data; ?></td>
 								<td><?php echo $camp->plataforma; ?></td>
 								<td><?php echo $camp->metodo; ?></td>
 								<td><?php echo $camp->midia; ?></td>
 								<td><?php echo $camp->id_midia; ?></td>
+								<td>
+									<button type="button" class="btn btn-default btn-block btn-sm acao-gerar" id="<?php echo $camp->id; ?>" title="Gerar link">
+										<span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+									</button>
+								</td>
 							</tr>
 								<?php endforeach; ?>
 							<?php endif; ?>
@@ -218,7 +226,7 @@
 						<tfoot>
 							<!-- Última linha em branco da tabela -->
 							<tr>
-								<td colspan="8"></td>
+								<td colspan="9"></td>
 							</tr>
 						</tfoot>
 					</table>

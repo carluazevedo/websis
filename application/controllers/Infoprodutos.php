@@ -27,10 +27,12 @@ class Infoprodutos extends CI_Controller {
 		$data['nav_infoprodutos'] = true;
 		/* Informações para 'rodape.php' */
 		$data['incluir_rodape'] = array(
+			$this->load->view('infoprodutos/painel_scripts', '', true),
 			'<script src="'.base_url('scripts/jquery-mask/jquery.mask.min.js').'"></script>',
 			'<script src="'.base_url('scripts/bootstrap-datepicker/js/bootstrap-datepicker.min.js').'"></script>',
 			'<script src="'.base_url('scripts/bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.min.js').'"></script>',
-			'<script src="'.base_url('scripts/ajax_lib.js').'"></script>'
+			'<script src="'.base_url('scripts/libs/ajax_lib.js').'"></script>',
+			'<script src="'.base_url('scripts/infoprodutos_painel.js').'"></script>'
 		);
 		/* Lógica do controlador */
 		$data['produtos']  = $this->infoprodutos_model->listar_registros('infoprod', '', 'produto');

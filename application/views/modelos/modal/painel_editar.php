@@ -77,7 +77,7 @@
 				</div><!-- /.container-fluid -->
 			</div><!-- /.modal-body -->
 			<div class="modal-footer">
-				<button type="submit" class="btn btn-success" id="editar" name="editar" form="editar-registro">Editar</button>
+				<button type="submit" class="btn btn-success" id="editar" name="editar" form="editar-registro">Gravar</button>
 				<button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
 			</div>
 		</div><!-- /.modal-content -->
