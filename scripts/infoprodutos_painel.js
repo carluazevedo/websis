@@ -1,4 +1,4 @@
-$(document).ready(function() {
+﻿$(document).ready(function() {
 	$('input[type=text]').keydown(function(e) {
 		return e.which !== 13;
 	});
@@ -7,25 +7,32 @@ $(document).ready(function() {
 	});
 	$('.acao-gerar').click(function() {
 		$('#modal-infoprod-gerar').modal('toggle');
-		linha.value = this.id;
+		var d_camp = document.getElementById('camp'+this.value).children;
+		/* Método atual (incompatível com navegadores antigos)
+		Array.from(d_camp).forEach(dadosCampanha); */
+		/* Método anterior (compatível com navegadores antigos) */
+		Array.prototype.forEach.call(d_camp, dadosCampanha);
 	});
 	$('#modal-infoprod-gerar').on('shown.bs.modal', function() {
 		prefixo1.focus();
 	});
 });
 
-prefixo1.addEventListener('focus', obterPrefixo);
-prefixo2.addEventListener('focus', obterPrefixo);
+var camp = [];
+function dadosCampanha(e) {
+	camp.push(e.innerHTML);
+}
 
-function obterPrefixo()
+prefixo1.addEventListener('focus', gerarLink);
+prefixo2.addEventListener('focus', gerarLink);
+function gerarLink()
 {
-	prefixo.value = this.value;
-	link_gerado.innerHTML = document.querySelector('#campanha'+linha.value).children[2].innerHTML+
-		prefixo.value+
-		'src='+
-		document.querySelector('#campanha'+linha.value).children[3].innerHTML+'|'+
-		document.querySelector('#campanha'+linha.value).children[4].innerHTML+'|'+
-		document.querySelector('#campanha'+linha.value).children[5].innerHTML+'|'+
-		document.querySelector('#campanha'+linha.value).children[6].innerHTML+'|'+
-		document.querySelector('#campanha'+linha.value).children[7].innerHTML;
+	l_camp = camp[2]+this.value+
+		'src='+camp[3]+
+		'|'+camp[4]+
+		'|'+camp[5]+
+		'|'+camp[6]+
+		'|'+camp[7];
+	link_gerado.href = l_camp;
+	link_gerado.innerHTML = l_camp;
 }

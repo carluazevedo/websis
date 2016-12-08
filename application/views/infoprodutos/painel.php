@@ -1,6 +1,6 @@
 <?php $this->load->view('modelos/barra_nav'); ?>
 
-<?php $this->load->view('modelos/modal/painel_infoprod_gerar'); ?>
+<?php $this->load->view('infoprodutos/painel_modal_gerar'); ?>
 
 <section>
 	<div class="container-fluid">
@@ -188,7 +188,7 @@
 								<th>PRODUTO</th>
 								<th>LINK</th>
 								<th>DATA</th>
-								<th>PLATAFORMA</th>
+								<th title="Plataforma">PLAT.</th>
 								<th>MÉTODO</th>
 								<th>MÍDIA</th>
 								<th>ID MÍDIA</th>
@@ -204,7 +204,7 @@
 							<?php else : ?>
 								<?php foreach ($campanhas as $camp) : ?>
 
-							<tr id="<?php echo 'campanha'.$camp->id; ?>">
+							<tr id="<?php echo 'camp'.$camp->id; ?>">
 								<td><?php echo $camp->id; ?></td>
 								<td><?php echo $this->infoprodutos_model->buscar_registro('infoprod', 'id', $camp->id_produto)->produto; ?></td>
 								<td><?php echo $this->infoprodutos_model->buscar_registro('infoprod_links', 'id', $camp->link)->link; ?></td>
@@ -214,7 +214,10 @@
 								<td><?php echo $camp->midia; ?></td>
 								<td><?php echo $camp->id_midia; ?></td>
 								<td>
-									<button type="button" class="btn btn-default btn-block btn-sm acao-gerar" id="<?php echo $camp->id; ?>" title="Gerar link">
+									<button type="button"
+											class="btn btn-default btn-block btn-sm acao-gerar"
+											value="<?php echo $camp->id; ?>"
+											title="Gerar link">
 										<span class="glyphicon glyphicon-link" aria-hidden="true"></span>
 									</button>
 								</td>

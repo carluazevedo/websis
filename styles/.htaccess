@@ -1,0 +1,8 @@
+# Avoid directory listing
+Options -Indexes
+
+# Prevents that files are accessed directly from the outside
+<FilesMatch "\.(htaccess)$">
+	order allow,deny
+	deny from all
+</FilesMatch>
