@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `infoprod_camp` (
 	`data` int(6) UNSIGNED NULL,
 	`plataforma` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
 	`metodo` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-	`midia` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+	`tipo_midia` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
 	`id_midia` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
 	PRIMARY KEY (`id`)
 ) DEFAULT CHARSET=utf8;
