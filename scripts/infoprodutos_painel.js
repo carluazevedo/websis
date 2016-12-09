@@ -27,8 +27,9 @@ prefixo1.addEventListener('focus', gerarLink);
 prefixo2.addEventListener('focus', gerarLink);
 function gerarLink()
 {
-	l_camp = camp[2]+this.value+
-		'src='+camp[3]+
+	l_camp = camp[1]+this.value+
+		'src='+camp[2]+
+		'|'+camp[3]+
 		'|'+camp[4]+
 		'|'+camp[5]+
 		'|'+camp[6]+

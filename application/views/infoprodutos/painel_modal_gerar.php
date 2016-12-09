@@ -22,6 +22,7 @@
 								</label>
 							</div><!-- /.btn-group -->
 						</div><!-- /.form-group -->
+						<label>Link gerado</label>
 						<a class="btn btn-primary btn-block" id="link_gerado" onclick="return false"></a>
 					</div><!-- /.row -->
 				</div><!-- /.container-fluid -->

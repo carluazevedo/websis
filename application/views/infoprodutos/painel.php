@@ -184,13 +184,14 @@
 					<table class="table table-condensed table-hover text-nowrap" id="campanhas">
 						<thead>
 							<tr class="active">
-								<th style="width: 40px">ID</th>
 								<th>PRODUTO</th>
 								<th>LINK</th>
+								<th style="width: 40px"
+									title="ID da campanha">ID</th>
 								<th>DATA</th>
 								<th title="Plataforma">PLAT.</th>
 								<th>MÉTODO</th>
-								<th>MÍDIA</th>
+								<th>TIPO MÍDIA</th>
 								<th>ID MÍDIA</th>
 								<th style="width: 60px">AÇÕES</th>
 							</tr>
@@ -205,13 +206,13 @@
 								<?php foreach ($campanhas as $camp) : ?>
 
 							<tr id="<?php echo 'camp'.$camp->id; ?>">
-								<td><?php echo $camp->id; ?></td>
 								<td><?php echo $this->infoprodutos_model->buscar_registro('infoprod', 'id', $camp->id_produto)->produto; ?></td>
 								<td><?php echo $this->infoprodutos_model->buscar_registro('infoprod_links', 'id', $camp->link)->link; ?></td>
+								<td><?php echo $camp->id; ?></td>
 								<td><?php echo $camp->data; ?></td>
 								<td><?php echo $camp->plataforma; ?></td>
 								<td><?php echo $camp->metodo; ?></td>
-								<td><?php echo $camp->midia; ?></td>
+								<td><?php echo $camp->tipo_midia; ?></td>
 								<td><?php echo $camp->id_midia; ?></td>
 								<td>
 									<button type="button"
