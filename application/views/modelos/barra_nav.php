@@ -21,6 +21,9 @@
                     <li<?php if (isset($nav_infoprodutos)) echo ' class="active"'; ?>>
                         <a href="<?php echo (isset($nav_infoprodutos)) ? '#' : site_url('infoprodutos'); ?>">Infoprodutos</a>
                     </li>
+                    <li<?php if (isset($nav_receitas)) echo ' class="active"'; ?>>
+                        <a href="<?php echo (isset($nav_receitas)) ? '#' : site_url('receitas'); ?>">Receitas</a>
+                    </li>
 				</ul>
 
 				<div class="navbar-right">

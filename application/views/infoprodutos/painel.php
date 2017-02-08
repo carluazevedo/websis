@@ -236,7 +236,7 @@
 					</table>
 				</div><!-- /Campanhas -->
 
-			</div><!-- /.col-sm-12 -->
+			</div><!-- /.col-sm-10 -->
 		</div><!-- /.row -->
 	</div><!-- /.container-fluid -->
 </section>

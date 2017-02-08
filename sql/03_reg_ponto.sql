@@ -3,7 +3,7 @@
 #######################################
 
 CREATE TABLE IF NOT EXISTS `reg_ponto_carlu` (
-  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT,
   `data` date NOT NULL DEFAULT '0000-00-00',
   `folga` tinyint(1) DEFAULT NULL,
   `entrada_1` time DEFAULT '00:00:00',
