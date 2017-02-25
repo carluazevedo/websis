@@ -43,7 +43,7 @@
               <?php
                   $gID=$group['id'];
                   $checked = null;
-                  $item = null;
+                  $value = null;
                   foreach($currentGroups as $grp) {
                       if ($gID == $grp->id) {
                           $checked= ' checked="checked"';
