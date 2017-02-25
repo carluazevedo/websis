@@ -7,7 +7,11 @@ CREATE TABLE IF NOT EXISTS `receitas` (
   `titulo` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
   `foi_testada` tinyint(1) DEFAULT NULL,
   `rendimento` int(4) UNSIGNED NULL,
-  `imagem` varchar(192) COLLATE utf8_unicode_ci NULL,
-  `ingred_principais` 
-  `ingred_opcionais` 
+  `imagem` varchar(255) COLLATE utf8_unicode_ci NULL,
+  `ingred_principais` text COLLATE utf8_unicode_ci NULL,
+  `ingred_opcionais` text COLLATE utf8_unicode_ci NULL,
+  `preparo` text COLLATE utf8_unicode_ci NULL,
+  `fonte` text COLLATE utf8_unicode_ci NULL,
+  `categorias` varchar(255) COLLATE utf8_unicode_ci NULL,
+  PRIMARY KEY (`id`)
 ) DEFAULT CHARSET=utf8;
