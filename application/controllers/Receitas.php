@@ -10,6 +10,7 @@ class Receitas extends CI_Controller {
 		parent::__construct();
 		if (!$this->session->has_userdata('identity')) redirect('auth');
 		$this->load->model('geral_model');
+		$this->load->model('receitas_model');
 	}
 
 	public function index()
@@ -21,6 +22,21 @@ class Receitas extends CI_Controller {
 		$view = 'receitas/painel';
 		$data['titulo_pagina'] = 'Receitas';
 		$data['nav_receitas'] = true;
+		/* Informações para 'rodape.php' */
+		/* Lógica do controlador */
+		$colunas = array(
+				'titulo',
+				'data_criacao',
+				'data_alteracao',
+				'foi_testada',
+				'rendimento',
+				'imagem',
+				'categorias'
+		);
+		$data['info'] = $this->receitas_model->buscar_registro('receitas', '', '', $colunas);
+		$data['ingr'] = $this->receitas_model->buscar_registro('receitas', '', '', 'ingredientes');
+		$data['prep'] = $this->receitas_model->buscar_registro('receitas', '', '', 'preparo');
+		$data['font'] = $this->receitas_model->buscar_registro('receitas', '', '', 'fonte');
 		/* Conclusão */
 		$this->load->view('modelos/cabecalho', $data);
 		$this->load->view($view, $data);

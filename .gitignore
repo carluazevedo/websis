@@ -30,3 +30,6 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 .settings/*
 .buildpath
 .project
+
+# Local files
+media/images/*

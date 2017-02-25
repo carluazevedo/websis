@@ -67,6 +67,9 @@
 								<?php elseif ($reg->folga == 1) : ?>
 
 								<td class="text-center active" colspan="4"><strong>FOLGA</strong></td>
+								<?php elseif ($reg->folga == 2) : ?>
+
+								<td class="text-center active" colspan="4"><strong>FÉRIAS</strong></td>
 								<?php endif; ?>
 
 								<td><?php echo $reg->observacoes; ?></td>
