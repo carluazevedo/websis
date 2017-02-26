@@ -67,6 +67,53 @@
 				</div>
 			</div>
 
+			<div class="row">
+				<div class="col-sm-12">
+					<h2>Modo de preparo:</h2>
+					<ol>
+					<?php
+						$p = json_decode($prep->preparo);
+						foreach ($p->passos as $ps) {
+							printf("<li>%s</li>", $ps);
+						}
+					?>
+					</ol>
+
+					<?php if ($font->fonte != '') : ?>
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<strong>Fonte:</strong>
+							<?php
+								$f = json_decode($font->fonte);
+								if (count($f) == 1) :
+									printf('<a target="_blank" href="%s">%s</a>', $f[0]->href, $f[0]->texto);
+								elseif (count($f) >= 2) :
+									printf('<a target="_blank" href="%s">%s</a>', $f[0]->href, $f[0]->texto);
+									for ($n = 1; $n < count($f); $n++) {
+										printf(' | <a target="_blank" href="%s">%s</a>', $f[$n]->href, $f[$n]->texto);
+									}
+								endif;
+							?>
+						</div>
+					</div><!-- /.panel -->
+					<?php endif; ?>
+
+					<?php if ($info->categorias != '') : ?>
+					<p>
+						Categorias:
+						<?php
+							$c = json_decode($info->categorias);
+							foreach ($c as $cat) {
+								echo ('<a target="_blank" href="#">');
+								printf('<span class="badge">%s</span>', $cat);
+								echo ('</a> ');
+							}
+						?>
+					</p>
+					<?php endif; ?>
+
+				</div><!-- /.col-sm-12 -->
+			</div><!-- /.row -->
 			</div><!-- /.col-sm-10 -->
 		</div><!-- /.row -->
 	</div><!-- /.container-fluid -->
