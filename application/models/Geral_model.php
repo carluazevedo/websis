@@ -20,4 +20,11 @@ class Geral_model extends CI_Model {
 			return $this->session->userdata('identity');
 		}
 	}
+
+	/* Funções para tratamento de exibição de dados */
+	public function formata_data($data)
+	{
+		$dataf = date_format(date_create($data), 'd/m/Y');
+		return $dataf;
+	}
 }
