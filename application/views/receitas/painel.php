@@ -8,7 +8,7 @@
 					<h1><?php #echo $titulo_pagina; ?></h1>
 				</div -->
 
-				<h1><?php echo $info->titulo; ?></h1>
+				<h1 id="titulo_receita"><?php echo $info->titulo; ?></h1>
 				<div class="alert alert-info" role="alert">
 					A receita já foi testada? 
 					<?php if ($info->foi_testada == false) : ?>
@@ -44,25 +44,31 @@
 
 					<div class="col-sm-6">
 						<h2>Ingredientes:</h2>
-						<ul>
+						<ul id="ingr_principais">
 						<?php
 							$i = json_decode($ingr->ingredientes);
 							foreach ($i->principais as $ip) {
-								printf("<li>%s</li>", $ip);
+								if (preg_match('/^</i', $ip)) {
+									printf("%s\n", $ip);
+								} else {
+									printf("<li>%s</li>\n", $ip);
+								}
 							}
 						?>
 						</ul>
 
 						<?php if ($i->opcionais) : ?>
-						<h3>Opcional</h3>
-						<ul>
+
+						<h2>Opcional</h2>
+						<ul id="ingr_opcionais">
 						<?php
 							foreach ($i->opcionais as $io) {
-								printf("<li>%s</li>", $io);
+								printf("<li>%s</li>\n", $io);
 							}
 						?>
 						</ul>
 						<?php endif; ?>
+
 					</div>
 				</div>
 
@@ -73,23 +79,24 @@
 						<?php
 							$p = json_decode($prep->preparo);
 							foreach ($p->passos as $ps) {
-								printf("<li>%s</li>", $ps);
+								printf("<li>%s</li>\n", $ps);
 							}
 						?>
 						</ol>
 
 						<?php if ($font->fonte != '') : ?>
+
 						<div class="panel panel-default">
 							<div class="panel-body">
 								<strong>Fonte:</strong>
 								<?php
 									$f = json_decode($font->fonte);
 									if (count($f) == 1) :
-										printf('<a target="_blank" href="%s">%s</a>', $f[0]->href, $f[0]->texto);
+										printf('<a target="_blank" href="%s">%s</a>'."\n", $f[0]->href, $f[0]->texto);
 									elseif (count($f) >= 2) :
-										printf('<a target="_blank" href="%s">%s</a>', $f[0]->href, $f[0]->texto);
+										printf('<a target="_blank" href="%s">%s</a>'."\n", $f[0]->href, $f[0]->texto);
 										for ($n = 1; $n < count($f); $n++) {
-											printf(' | <a target="_blank" href="%s">%s</a>', $f[$n]->href, $f[$n]->texto);
+											printf(' | <a target="_blank" href="%s">%s</a>'."\n", $f[$n]->href, $f[$n]->texto);
 										}
 									endif;
 								?>
@@ -98,6 +105,7 @@
 						<?php endif; ?>
 
 						<?php if ($info->categorias != '') : ?>
+
 						<p>
 							Categorias:
 							<?php
@@ -105,7 +113,7 @@
 								foreach ($c as $cat) {
 									echo ('<a target="_blank" href="#">');
 									printf('<span class="label label-primary">%s</span>', $cat);
-									echo ('</a> ');
+									echo ("</a> \n");
 								}
 							?>
 						</p>

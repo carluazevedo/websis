@@ -28,6 +28,7 @@ class Receitas extends CI_Controller {
 		$data['titulo_pagina'] = 'Receitas';
 		$data['nav_receitas'] = true;
 		/* Informações para 'rodape.php' */
+		$data['incluir_rodape'] = array('<script src="'.base_url('scripts/receitas_painel.js').'"></script>');
 		/* Lógica do controlador */
 		$colunas = array(
 				'titulo',
