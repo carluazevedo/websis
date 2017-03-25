@@ -39,7 +39,7 @@
 
 				<div class="row">
 					<div class="col-sm-6">
-						<img class="img-thumbnail" src="<?php echo base_url('/media/images/'.$info->imagem); ?>" alt="<?php echo $info->imagem; ?>">
+						<img class="img-thumbnail" src="<?php echo base_url('/media/images/receitas/'.$info->imagem); ?>" alt="<?php echo $info->imagem; ?>">
 					</div>
 
 					<div class="col-sm-6">

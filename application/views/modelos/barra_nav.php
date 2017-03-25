@@ -24,6 +24,9 @@
                     <li<?php if (isset($nav_receitas)) echo ' class="active"'; ?>>
                         <a href="<?php echo (isset($nav_receitas)) ? '#' : site_url('receitas'); ?>">Receitas</a>
                     </li>
+                    <li<?php if (isset($nav_curriculos)) echo ' class="active"'; ?>>
+                    	<a href="<?php echo (isset($nav_curriculos)) ? '#' : site_url('curriculos'); ?>">Currículos</a>
+                    </li>
 				</ul>
 
 				<div class="navbar-right">
