@@ -1,29 +1,29 @@
-<header>
-	<h1>CARLU PEREIRA AZEVEDO</h1>
-	<div class="panel panel-default">
-		<div class="panel-body">
-			<table>
-				<tr>
-					<td colspan="2">Brasileiro, casado, <span id="idade"></span>, 1 filho</td>
-				</tr>
-				<tr>
-					<td><b>Endereço:</b></td>
-					<td>Rua Eurico Augusto da Silva, nº 46 - São Cristóvão - Pouso Alegre/MG</td>
-				</tr>
-				<tr>
-					<td><b>Telefones:</b></td>
-					<td>(35) 98401-5809 <img style="vertical-align: baseline; width: 11px" src="<?php echo base_url('/media/images/whatsapp.png'); ?>"></td>
-				</tr>
-				<tr>
-					<td><b>E-mail:</b></td>
-					<td>carluazevedo@gmail.com</td>
-				</tr>
-			</table>
-		</div><!-- /.panel-body -->
-	</div><!-- /.panel -->
-</header>
+<div class="curriculo">
+	<header>
+		<h1>CARLU PEREIRA AZEVEDO</h1>
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<table>
+					<tr>
+						<td colspan="2">Brasileiro, casado, <span id="idade"></span>, 1 filho</td>
+					</tr>
+					<tr>
+						<td><b>Endereço:</b></td>
+						<td>Rua Eurico Augusto da Silva, nº 46 - São Cristóvão - Pouso Alegre/MG</td>
+					</tr>
+					<tr>
+						<td><b>Telefones:</b></td>
+						<td>(35) 98401-5809 <img style="vertical-align: baseline; width: 11px" src="<?php echo base_url('/media/images/whatsapp.png'); ?>"></td>
+					</tr>
+					<tr>
+						<td><b>E-mail:</b></td>
+						<td>carluazevedo@gmail.com</td>
+					</tr>
+				</table>
+			</div><!-- /.panel-body -->
+		</div><!-- /.panel -->
+	</header>
 
-<main>
 	<section id="objetivo">
 		<h2>OBJETIVO</h2>
 		<div class="panel panel-default">
@@ -295,4 +295,4 @@
 			</div><!-- /.panel-body -->
 		</div><!-- /.panel -->
 	</section>
-</main>
+</div>

@@ -1,37 +1,39 @@
-<header>
-	<h1>HELEN BEATRIZ DE SOUSA AZEVEDO</h1>
-	<div class="panel panel-default">
-		<div class="panel-body">
-			<table>
-				<tr>
-					<td colspan="2">Brasileira, casada, <span id="idade"></span>, 1 filho</td>
-				</tr>
-				<tr>
-					<td><b>Endereço:</b></td>
-					<td>Rua Eurico Augusto da Silva, nº 46 - São Cristóvão - Pouso Alegre/MG</td>
-				</tr>
-				<tr>
-					<td><b>Telefones:</b></td>
-					<td>(35) 98401-5809 <img style="vertical-align: baseline; width: 11px" src="<?php echo base_url('/media/images/whatsapp.png'); ?>"></td>
-				</tr>
-				<tr>
-					<td><b>E-mail:</b></td>
-					<td>helenb_sousa@yahoo.com.br</td>
-				</tr>
-			</table>
-		</div><!-- /.panel-body -->
-	</div><!-- /.panel -->
-</header>
+<div class="curriculo">
+	<header>
+		<h1>HELEN BEATRIZ DE SOUSA AZEVEDO</h1>
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<table>
+					<tr>
+						<td colspan="2">Brasileira, casada, <span id="idade"></span>, 1 filho</td>
+					</tr>
+					<tr>
+						<td><b>Endereço:</b></td>
+						<td>Rua Eurico Augusto da Silva, nº 46 - São Cristóvão - Pouso Alegre/MG</td>
+					</tr>
+					<tr>
+						<td><b>Telefones:</b></td>
+						<td>(35) 98401-5809 <img style="vertical-align: baseline; width: 11px" src="<?php echo base_url('/media/images/whatsapp.png'); ?>"></td>
+					</tr>
+					<tr>
+						<td><b>E-mail:</b></td>
+						<td>helenb_sousa@yahoo.com.br</td>
+					</tr>
+				</table>
+			</div><!-- /.panel-body -->
+		</div><!-- /.panel -->
+	</header>
 
-<main>
 	<section id="objetivo">
 		<h2>OBJETIVO</h2>
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<div>Atuar como Técnico de Laboratório.</div>
-				<div hidden>Atuar como auxiliar de recepção.</div>
-				<div hidden>Atuar como auxiliar administrativo.</div>
-				<div hidden>Atuar como auxiliar de produção.</div>
+				<select>
+					<option>Atuar como Técnico de Laboratório.</option>
+					<option>Atuar como auxiliar de recepção.</option>
+					<option>Atuar como auxiliar administrativo.</option>
+					<option>Atuar como auxiliar de produção.</option>
+				</select>
 			</div><!-- /.panel-body -->
 		</div><!-- /.panel -->
 	</section>
@@ -197,4 +199,4 @@
 			</div><!-- /.panel-body -->
 		</div><!-- /.panel -->
 	</section>
-</main>
+</div>
