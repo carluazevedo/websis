@@ -25,7 +25,7 @@ class Curriculos extends CI_Controller {
 		$data['titulo_pagina'] = 'Currículos';
 		$data['nav_curriculos'] = true;
 		/* Informações para 'rodape.php' */
-		//
+		$data['incluir_rodape'] = array('<script src="'.base_url('scripts/curriculos_painel.js').'"></script>');
 		/* Lógica do controlador */
 		//
 		/* Conclusão */

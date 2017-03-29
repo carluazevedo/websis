@@ -1,0 +1,3 @@
+/**
+ * curriculos_painel.js
+ */

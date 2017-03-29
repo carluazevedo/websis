@@ -1,12 +1,19 @@
 
 <div class="curriculo">
+	<!--
+	author: Carlu P. Azevedo
+    description: Currículo de Helen Beatriz de Sousa Azevedo
+    version: 3.0
+    creation: 09-jun-2016
+    last-modification: 29-mar-2017
+    -->
 	<header>
 		<h1>HELEN BEATRIZ DE SOUSA AZEVEDO</h1>
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<table>
 					<tr>
-						<td colspan="2">Brasileira, casada, <span id="idade"></span>, 1 filho</td>
+						<td colspan="2">Brasileira, casada, <?php $this->geral_model->calcula_idade('1978-11-17'); ?>, 1 filho</td>
 					</tr>
 					<tr>
 						<td><b>Endereço:</b></td>
@@ -39,6 +46,9 @@
 		</div><!-- /.panel -->
 	</section>
 
+	<label class="pull-right hidden-print">
+		<input type="checkbox">OCULTAR
+	</label>
 	<section id="resumo">
 		<h2>RESUMO</h2>
 		<div class="panel panel-default text-justify">
@@ -79,6 +89,9 @@
 
 	<section id="historico">
 		<h2>HISTÓRICO PROFISSIONAL</h2>
+		<label class="pull-right hidden-print">
+			<input type="checkbox">OCULTAR
+		</label>
 		<div class="panel panel-default" id="historico1">
 			<div class="panel-heading-custom">
 				<h3 class="panel-title-custom">CHOCOLATES KOPENHAGEN (EXTREMA/MG)</h3>
@@ -97,6 +110,9 @@
 			</div><!-- /.panel-body -->
 		</div><!-- /.panel -->
 
+		<label class="pull-right hidden-print">
+			<input type="checkbox">OCULTAR
+		</label>
 		<div class="panel panel-default" id="historico2">
 			<div class="panel-heading-custom">
 				<h3 class="panel-title-custom">BARASCH INDÚSTRIA METALÚRGICA (EXTREMA/MG)</h3>
@@ -115,6 +131,9 @@
 			</div><!-- /.panel-body -->
 		</div><!-- /.panel -->
 
+		<label class="pull-right hidden-print">
+			<input type="checkbox">OCULTAR
+		</label>
 		<div class="panel panel-default" id="historico3">
 			<div class="panel-heading-custom">
 				<h3 class="panel-title-custom">DELEIEV INDÚSTRIA FARMACEUTICA (CAMANDUCAIA/MG)</h3>
@@ -133,6 +152,9 @@
 			</div><!-- /.panel-body -->
 		</div><!-- /.panel -->
 
+		<label class="pull-right hidden-print">
+			<input type="checkbox">OCULTAR
+		</label>
 		<div class="panel panel-default" id="historico4">
 			<div class="panel-heading-custom">
 				<h3 class="panel-title-custom">LABORATÓRIO SANOBIOL (POUSO ALEGRE/MG)</h3>

@@ -1,12 +1,19 @@
 
 <div class="curriculo">
+	<!--
+	author: Carlu P. Azevedo
+    description: Currículo de Carlu Pereira Azevedo
+    version: 3.0
+    creation: 23-out-2015
+    last-modification: 29-mar-2017
+    -->
 	<header>
 		<h1>CARLU PEREIRA AZEVEDO</h1>
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<table>
 					<tr>
-						<td colspan="2">Brasileiro, casado, <span id="idade"></span>, 1 filho</td>
+						<td colspan="2">Brasileiro, casado, <?php $this->geral_model->calcula_idade('1986-09-24'); ?>, 1 filho</td>
 					</tr>
 					<tr>
 						<td><b>Endereço:</b></td>
@@ -34,6 +41,9 @@
 		</div><!-- /.panel -->
 	</section>
 
+	<label class="pull-right hidden-print">
+		<input type="checkbox">OCULTAR
+	</label>
 	<section id="resumo">
 		<h2>RESUMO</h2>
 		<div class="panel panel-default text-justify">
@@ -77,7 +87,10 @@
 
 	<section id="historico">
 		<h2>HISTÓRICO PROFISSIONAL</h2>
-		<div class="panel panel-default">
+		<label class="pull-right hidden-print">
+			<input type="checkbox">OCULTAR
+		</label>
+		<div class="panel panel-default" id="historico1">
 			<div class="panel-heading-custom">
 				<h3 class="panel-title-custom">KRONAMAXXI GERENCIAMENTO DE RISCOS (POUSO ALEGRE/MG)</h3>
 			</div>
@@ -99,7 +112,10 @@
 			</div><!-- /.panel-body -->
 		</div><!-- /.panel -->
 
-		<div class="panel panel-default">
+		<label class="pull-right hidden-print">
+			<input type="checkbox">OCULTAR
+		</label>
+		<div class="panel panel-default" id="historico2">
 			<div class="panel-heading-custom">
 				<h3 class="panel-title-custom">LEGGETT &amp; PLATT DO BRASIL (CAMANDUCAIA/MG)</h3>
 			</div>
@@ -117,7 +133,10 @@
 			</div><!-- /.panel-body -->
 		</div><!-- /.panel -->
 
-		<div class="panel panel-default">
+		<label class="pull-right hidden-print">
+			<input type="checkbox">OCULTAR
+		</label>
+		<div class="panel panel-default" id="historico3">
 			<div class="panel-heading-custom">
 				<h3 class="panel-title-custom">ENGETEC TECNOLOGIA (CAMANDUCAIA/MG)</h3>
 			</div>
@@ -139,7 +158,10 @@
 			</div><!-- /.panel-body -->
 		</div><!-- /.panel -->
 
-		<div class="panel panel-default">
+		<label class="pull-right hidden-print">
+			<input type="checkbox">OCULTAR
+		</label>
+		<div class="panel panel-default"  id="historico4">
 			<div class="panel-heading-custom">
 				<h3 class="panel-title-custom">PREFEITURA MUNICIPAL DE CAMANDUCAIA</h3>
 			</div>
