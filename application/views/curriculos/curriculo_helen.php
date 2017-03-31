@@ -46,9 +46,10 @@
 		</div><!-- /.panel -->
 	</section>
 
-	<label class="pull-right hidden-print">
-		<input type="checkbox">OCULTAR
-	</label>
+	<div class="pull-right hidden-print">
+		<input type="checkbox" id="ocultar_resumo">
+		<label for="ocultar_resumo">OCULTAR</label>
+	</div>
 	<section id="resumo">
 		<h2>RESUMO</h2>
 		<div class="panel panel-default text-justify">

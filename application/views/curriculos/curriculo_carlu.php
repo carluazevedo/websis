@@ -41,9 +41,10 @@
 		</div><!-- /.panel -->
 	</section>
 
-	<label class="pull-right hidden-print">
-		<input type="checkbox">OCULTAR
-	</label>
+	<div class="pull-right hidden-print">
+		<input type="checkbox" id="ocultar_resumo">
+		<label for="ocultar_resumo">OCULTAR</label>
+	</div>
 	<section id="resumo">
 		<h2>RESUMO</h2>
 		<div class="panel panel-default text-justify">
@@ -87,9 +88,10 @@
 
 	<section id="historico">
 		<h2>HISTÓRICO PROFISSIONAL</h2>
-		<label class="pull-right hidden-print">
-			<input type="checkbox">OCULTAR
-		</label>
+		<div class="pull-right hidden-print">
+			<input type="checkbox" id="ocultar_historico1">
+			<label for="ocultar_historico1">OCULTAR</label>
+		</div>
 		<div class="panel panel-default" id="historico1">
 			<div class="panel-heading-custom">
 				<h3 class="panel-title-custom">KRONAMAXXI GERENCIAMENTO DE RISCOS (POUSO ALEGRE/MG)</h3>

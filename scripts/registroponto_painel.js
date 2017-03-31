@@ -1,4 +1,4 @@
-$(document).ready(function() {
+﻿$(document).ready(function() {
 	$('input[type=text]').keydown(function(e) {
 		return e.which !== 13;
 	});
