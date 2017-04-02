@@ -25,10 +25,8 @@
 				<!-- Tab panes -->
 				<div class="tab-content">
 					<div role="tabpanel" class="tab-pane fade in active" id="carlu">
-						
 					</div><!-- /#carlu -->
 					<div role="tabpanel" class="tab-pane fade" id="helen">
-						
 					</div><!-- /#helen -->
 				</div>
 			</div><!-- /.col-sm-12 -->

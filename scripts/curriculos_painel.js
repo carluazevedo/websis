@@ -1,10 +1,19 @@
-﻿function buscarCurriculo(e)
+﻿/**
+ * Variáveis de uso da função 'buscarCurriculo'
+ */
+var id,
+	id_anterior;
+
+function buscarCurriculo(e)
 {
-	ajaxPostResponse(site_url+'curriculos/buscar', e.hash, resultado);
+	id = e.hash;
+	if (id_anterior != undefined) document.querySelector(id_anterior).innerHTML = '';
+	ajaxPostResponse(site_url+'curriculos/buscar', id, resultado);
 	function resultado(callback)
 	{
-		document.querySelector(e.hash).innerHTML = callback;
+		document.querySelector(id).innerHTML = callback;
 	}
+	id_anterior = id;
 }
 
 /**
@@ -15,37 +24,21 @@ document.onload = buscarCurriculo(document.querySelector('a[href="#carlu"]'));
 /**
  * Exibe o currículo ao clicar na aba
  */
-$('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
+$('a[data-toggle="tab"]').on('shown.bs.tab', function() {
 	buscarCurriculo(this);
 });
 
-function ocultarElemento()
+function ocultarElemento(e, a)
 {
-	var self = this;
-	this.elemento = '';
-	this.alvo = '';
-	this.texto = '';
-	this.classe = '';
-	this.executar = function() {
-		var elemento = document.getElementById(this.elemento);
-		var alvo = document.getElementById(this.alvo);
-		elemento.addEventListener('change', function() {
-			if (elemento.checked == true) {
-				alvo.hidden = true;
-				elemento.nextElementSibling.innerHTML = self.texto[0];
-				elemento.parentNode.className = self.classe[0];
-			} else if (elemento.checked == false) {
-				alvo.hidden = false;
-				elemento.nextElementSibling.innerHTML = self.texto[1];
-				elemento.parentNode.className = self.classe[1];
-			}
-		});
+	var alvo = document.getElementById(a),
+		texto = e.getAttribute('data-ocultar-elemento');
+	if (e.checked == true) {
+		alvo.hidden = true;
+		e.nextElementSibling.innerHTML = 'MOSTRAR '+texto;
+		e.parentNode.setAttribute('class', 'hidden-print');
+	} else if (e.checked == false) {
+		alvo.hidden = false;
+		e.nextElementSibling.innerHTML = 'OCULTAR';
+		e.parentNode.setAttribute('class', 'pull-right hidden-print');
 	}
 }
-
-var ocultarResumo = new ocultarElemento();
-ocultarResumo.elemento = 'ocultar_resumo';
-ocultarResumo.alvo = 'resumo';
-ocultarResumo.texto = ["MOSTRAR RESUMO", "OCULTAR"];
-ocultarResumo.classe = ["hidden-print", "pull-right hidden-print"];
-ocultarResumo.executar();

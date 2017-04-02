@@ -38,16 +38,16 @@
 			<div class="panel-body">
 				<select>
 					<option>Atuar como Técnico de Laboratório.</option>
-					<option>Atuar como auxiliar de recepção.</option>
-					<option>Atuar como auxiliar administrativo.</option>
-					<option>Atuar como auxiliar de produção.</option>
+					<option>Atuar como Auxiliar de Recepção.</option>
+					<option>Atuar como Auxiliar Administrativo.</option>
+					<option>Atuar como Auxiliar de Produção.</option>
 				</select>
 			</div><!-- /.panel-body -->
 		</div><!-- /.panel -->
 	</section>
 
 	<div class="pull-right hidden-print">
-		<input type="checkbox" id="ocultar_resumo">
+		<input type="checkbox" id="ocultar_resumo" onchange="ocultarElemento(this, 'resumo')" data-ocultar-elemento="RESUMO">
 		<label for="ocultar_resumo">OCULTAR</label>
 	</div>
 	<section id="resumo">
@@ -90,9 +90,10 @@
 
 	<section id="historico">
 		<h2>HISTÓRICO PROFISSIONAL</h2>
-		<label class="pull-right hidden-print">
-			<input type="checkbox">OCULTAR
-		</label>
+		<div class="pull-right hidden-print">
+			<input type="checkbox" id="ocultar_historico1" onchange="ocultarElemento(this, 'historico1')" data-ocultar-elemento="HISTÓRICO 1">
+			<label for="ocultar_historico1">OCULTAR</label>
+		</div>
 		<div class="panel panel-default" id="historico1">
 			<div class="panel-heading-custom">
 				<h3 class="panel-title-custom">CHOCOLATES KOPENHAGEN (EXTREMA/MG)</h3>
@@ -111,9 +112,10 @@
 			</div><!-- /.panel-body -->
 		</div><!-- /.panel -->
 
-		<label class="pull-right hidden-print">
-			<input type="checkbox">OCULTAR
-		</label>
+		<div class="pull-right hidden-print">
+			<input type="checkbox" id="ocultar_historico2" onchange="ocultarElemento(this, 'historico2')" data-ocultar-elemento="HISTÓRICO 2">
+			<label for="ocultar_historico2">OCULTAR</label>
+		</div>
 		<div class="panel panel-default" id="historico2">
 			<div class="panel-heading-custom">
 				<h3 class="panel-title-custom">BARASCH INDÚSTRIA METALÚRGICA (EXTREMA/MG)</h3>
@@ -132,12 +134,13 @@
 			</div><!-- /.panel-body -->
 		</div><!-- /.panel -->
 
-		<label class="pull-right hidden-print">
-			<input type="checkbox">OCULTAR
-		</label>
+		<div class="pull-right hidden-print">
+			<input type="checkbox" id="ocultar_historico3" onchange="ocultarElemento(this, 'historico3')" data-ocultar-elemento="HISTÓRICO 3">
+			<label for="ocultar_historico3">OCULTAR</label>
+		</div>
 		<div class="panel panel-default" id="historico3">
 			<div class="panel-heading-custom">
-				<h3 class="panel-title-custom">DELEIEV INDÚSTRIA FARMACEUTICA (CAMANDUCAIA/MG)</h3>
+				<h3 class="panel-title-custom">DELEIEV INDÚSTRIA FARMACÊUTICA (CAMANDUCAIA/MG)</h3>
 			</div>
 			<div class="panel-body panel-body-custom">
 				<table>
@@ -153,9 +156,10 @@
 			</div><!-- /.panel-body -->
 		</div><!-- /.panel -->
 
-		<label class="pull-right hidden-print">
-			<input type="checkbox">OCULTAR
-		</label>
+		<div class="pull-right hidden-print">
+			<input type="checkbox" id="ocultar_historico4" onchange="ocultarElemento(this, 'historico4')" data-ocultar-elemento="HISTÓRICO 4">
+			<label for="ocultar_historico4">OCULTAR</label>
+		</div>
 		<div class="panel panel-default" id="historico4">
 			<div class="panel-heading-custom">
 				<h3 class="panel-title-custom">LABORATÓRIO SANOBIOL (POUSO ALEGRE/MG)</h3>

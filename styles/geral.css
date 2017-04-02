@@ -3,7 +3,9 @@
   margin-bottom: 10px;
 }
 
-/* < Painel inicial > */
+/**
+ * Painel inicial
+ */
 .table tbody>tr>td {
   vertical-align: middle;
 }
@@ -14,17 +16,23 @@
   width: 35px;
 }
 
-/* < Decoração das legendas do formulário > */
+/**
+ * Decoração das legendas do formulário
+ */
 legend {
   border-bottom-color: #999;
 }
 
-/* < Erro de validação de formulário > */
+/**
+ * Erro de validação de formulário
+ */
 .custom-error {
   color: #a94442;
 }
 
-/* < Painel de informações > */
+/**
+ * Painel de informações
+ */
 .panel-default {
   border-color: #ccc;
 }
@@ -45,12 +53,16 @@ legend {
   text-decoration: none;
 }
 
-/* < Alinhamento de alguns campos no formulário > */
+/**
+ * Alinhamento de alguns campos no formulário
+ */
 #valor, #peso {
   text-align: right;
 }
 
-/* < Barra de navegação do rodapé > */
+/**
+ * Barra de navegação do rodapé
+ */
 @media (min-width: 768px) {
   #navbar-bottom {
     border-radius: 0;
@@ -80,7 +92,9 @@ legend {
   }
 }
 
-/* < Modais > */
+/**
+ * Modais
+ */
 #modal-remover .modal-header .glyphicon-remove-sign {
   color: #d9534f;
 }
