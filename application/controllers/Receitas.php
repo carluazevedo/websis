@@ -39,6 +39,7 @@ class Receitas extends CI_Controller {
 				'imagem',
 				'categorias'
 		);
+		$data['titulos_receitas'] = $this->receitas_model->listar_registros('receitas', 'id, titulo', 'ASC');
 		$data['info'] = $this->receitas_model->buscar_registro('receitas', 'id', $id, $colunas);
 		$data['ingr'] = $this->receitas_model->buscar_registro('receitas', 'id', $id, 'ingredientes');
 		$data['prep'] = $this->receitas_model->buscar_registro('receitas', 'id', $id, 'preparo');

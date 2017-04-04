@@ -4,9 +4,21 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1">
-				<!-- div class="page-header">
-					<h1><?php #echo $titulo_pagina; ?></h1>
-				</div -->
+				<div class="page-header hidden-print">
+					<h1><?php echo $titulo_pagina; ?></h1>
+				</div>
+
+				<div class="hidden-print">
+					<label class="control-label" for="selecionar_receita">Selecione a receita:</label>
+					<select class="form-control" id="selecionar_receita" onchange="javascript:location.href=this.value">
+						<option value="#" ></option>
+						<?php
+							foreach ($titulos_receitas as $t) :
+								printf('<option id="rec%s" value="%s">%s</option>'.PHP_EOL, $t->id, site_url('/receitas/ver/'.$t->id), $t->titulo);
+							endforeach;
+						?>
+					</select>
+				</div>
 
 				<h1 id="titulo_receita"><?php echo $info->titulo; ?></h1>
 				<div class="alert alert-info" role="alert">

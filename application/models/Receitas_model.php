@@ -32,4 +32,17 @@ class Receitas_model extends CI_Model {
 			return $query->row_array();
 		}
 	}
+
+	public function listar_registros($tabela, $colunas = '', $ordem = 'DESC', $limite = '', $deslocamento = '', $resultado_matriz = false)
+	{
+		$query = $this->db->select($colunas)
+		->order_by('titulo', $ordem)
+		->limit($limite, $deslocamento)
+		->get($tabela);
+		if ($resultado_matriz == false) {
+			return $query->result();
+		} elseif ($resultado_matriz == true) {
+			return $query->result_array();
+		}
+	}
 }
