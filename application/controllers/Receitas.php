@@ -15,7 +15,7 @@ class Receitas extends CI_Controller {
 
 	public function index()
 	{
-		redirect('receitas/ver');
+		redirect('receitas/ver/1');
 	}
 
 	public function ver($id = 1)

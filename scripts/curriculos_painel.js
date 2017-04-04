@@ -1,4 +1,4 @@
-﻿/**
+﻿﻿/**
  * Variáveis de uso da função 'buscarCurriculo'
  */
 var id,
@@ -14,6 +14,7 @@ function buscarCurriculo(e)
 		document.querySelector(id).innerHTML = callback;
 	}
 	id_anterior = id;
+	document.title = e.getAttribute('data-nome');
 }
 
 /**

@@ -1,7 +1,12 @@
-﻿document.title = document.title + ' | ' + titulo_receita.innerHTML;
+﻿﻿document.title = document.title + ' | ' + titulo_receita.innerHTML;
 
-var principais = document.querySelectorAll('#ingr_principais li');
-var opcionais = document.querySelectorAll('#ingr_opcionais li');
+var id_receita = location.href.match(/\d+$/i);
+
+document.getElementById('rec'+id_receita[0]).selected = true;
+document.getElementById('rec'+id_receita[0]).value = '';
+
+var principais = document.querySelectorAll('#ingr_principais li'),
+	opcionais = document.querySelectorAll('#ingr_opcionais li');
 
 for (i = 0; i < principais.length; i++) {
 	principais[i].addEventListener('click', function() {

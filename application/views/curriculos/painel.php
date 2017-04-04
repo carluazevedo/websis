@@ -11,12 +11,12 @@
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs hidden-print" role="tablist">
 					<li role="presentation" class="active">
-						<a href="#carlu" aria-controls="carlu" role="tab" data-toggle="tab">
+						<a href="#carlu" aria-controls="carlu" role="tab" data-toggle="tab" data-nome="CARLU PEREIRA AZEVEDO">
 							Carlu
 						</a>
 					</li>
 					<li role="presentation">
-						<a href="#helen" aria-controls="helen" role="tab" data-toggle="tab">
+						<a href="#helen" aria-controls="helen" role="tab" data-toggle="tab" data-nome="HELEN BEATRIZ DE SOUSA AZEVEDO">
 							Helen
 						</a>
 					</li>
