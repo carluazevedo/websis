@@ -49,14 +49,14 @@
 		<h2>RESUMO</h2>
 		<div class="panel panel-default text-justify">
 			<div class="panel-body">
-				Profissional com sete anos de experiência na área de informática,
+				Profissional com experiência na área de informática desde 2007,
 				principalmente em manutenção de compu&shy;tadores e periféricos
 				(hardware e software) e atendimento a usuários (help desk).
 				Boa experiência em pacote Microsoft Office (Excel, Word e PowerPoint),
 				configuração de redes, sistemas operacionais Windows e Linux.
 				Atualmente adquirindo conhecimento em Sistemas Web
-				utilizando tecnologias como HTML5, CSS3, JavaScript, jQuery, MySQL, PHP
-				e CodeIgniter. Aprendiz em Java.
+				utilizando tecnologias como HTML5, CSS3, JavaScript, jQuery, Bootstrap,
+				MySQL, PHP e CodeIgniter. Aprendiz em Java.
 			</div><!-- /.panel-body -->
 		</div><!-- /.panel -->
 	</section>
@@ -282,8 +282,8 @@
 					<li>Conhecimento em pacote Microsoft Office (Excel, Word e PowerPoint)</li>
 					<li>Internet e suas ferramentas</li>
 					<li>Conhecimento intermediário em servidores Linux</li>
-					<li>Conhecimento intermediário em Web Design (HTML5, CSS3, JavaScript e jQuery)</li>
-					<li>Conhecimento intermediário em Web Development (PHP, MySQL e CodeIgniter Web Framework)</li>
+					<li>Conhecimento intermediário em Web Design (HTML5, CSS3, JavaScript, jQuery e Bootstrap)</li>
+					<li>Conhecimento intermediário em Web Development (PHP, MySQL e CodeIgniter)</li>
 					<li>Conhecimento intermediário em Design Gráfico (Photoshop e CorelDRAW)</li>
 					<li>Aprendiz em linguagem Java</li>
 				</ul>
