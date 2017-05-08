@@ -36,7 +36,10 @@
 		<h2>OBJETIVO</h2>
 		<div class="panel panel-default">
 			<div class="panel-body">
-				Atuar na área de Suporte em Informática<!-- e Desenvolvimento de Sistemas Web -->.
+				<select>
+					<option>Atuar na área de Suporte em Informática<!-- e Desenvolvimento de Sistemas Web -->.</option>
+					<option>Atuar como Auxiliar Administrativo.</option>
+				</select>
 			</div><!-- /.panel-body -->
 		</div><!-- /.panel -->
 	</section>

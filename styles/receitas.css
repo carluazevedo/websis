@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+@media (max-width: 767px) {
+	#imagem_receita {
+		width: 50%;
+	}
+}
+
+@media (max-width: 480px) {
+	#imagem_receita {
+		width: 100%;
+	}
+}

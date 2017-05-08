@@ -48,7 +48,7 @@
 				</p>
 
 				<div class="row">
-					<div class="col-sm-6">
+					<div class="col-sm-6 pull-right" id="imagem_receita">
 						<img class="img-thumbnail" src="<?php echo base_url('/media/images/receitas/'.$info->imagem); ?>" alt="<?php echo $info->imagem; ?>">
 					</div>
 
