@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: UbuntuMono;
+	src: url(fonts/ubuntu_mono/ubuntu_mono.ttf);
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: UbuntuMono;
+	src: url(fonts/ubuntu_mono/ubuntu_mono_italic.ttf);
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: UbuntuMono;
+	src: url(fonts/ubuntu_mono/ubuntu_mono_bold.ttf);
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: UbuntuMono;
+	src: url(fonts/ubuntu_mono/ubuntu_mono_bold_italic.ttf);
+	font-weight: bold;
+	font-style: italic;
+}
+
+body {
+	font-family: UbuntuMono, monospace;
+}
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 0 5px 0 5px;
+}
+
+td {
+	white-space: nowrap;
+}
