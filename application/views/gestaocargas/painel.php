@@ -18,9 +18,9 @@
 			<thead>
 				<tr>
 					<th>#</th>
-					<th>DT</th>
+					<th hidden>DATA DE ATUALIZAÇÃO</th>
 					<th>STATUS</th>
-					<th>DATA DE ATUALIZAÇÃO</th>
+					<th>DT</th>
 					<th>TRANSPORTADORA</th>
 					<th title="Quantidade por embarque">ISCA</th>
 					<th title="Solicitação de monitoramento">MON.</th>
@@ -36,9 +36,9 @@
 
 				<tr>
 					<td><?php echo $reg->id; ?></td>
+					<td hidden><?php echo $this->geral_model->formata_data_hora($reg->data_atualizacao); ?></td>
+					<td class="status"><?php echo $reg->status; ?></td>
 					<td><?php echo $reg->dt; ?></td>
-					<td><?php echo $reg->status; ?></td>
-					<td><?php echo $this->geral_model->formata_data_hora($reg->data_atualizacao); ?></td>
 					<td><?php echo $reg->transportadora; ?></td>
 					<td><?php echo ($reg->isca == 0) ? '-' : $reg->isca; ?></td>
 					<td><?php echo ($reg->monitoramento == '') ? '-' : $reg->monitoramento; ?></td>
@@ -52,5 +52,17 @@
 
 			</tbody>
 		</table>
+		<footer>
+			<span id="end"></span>
+		</footer>
+		<!-- jQuery -->
+		<script src="<?php echo base_url('jquery/jquery.min.js'); ?>"></script>
+		<?php
+		if (isset($incluir_rodape)) :
+			foreach ($incluir_rodape as $i) : echo $i.PHP_EOL; endforeach;
+		else :
+			echo PHP_EOL;
+		endif;
+		?>
 	</body>
 </html>

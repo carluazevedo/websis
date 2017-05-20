@@ -20,6 +20,8 @@ class Gestaocargas extends CI_Controller {
 		/* Informações para 'view' */
 		$view = 'gestaocargas/painel';
 		$data['titulo_pagina'] = 'Gestão de Cargas';
+		/* Informações para 'rodape.php' */
+		$data['incluir_rodape'] = array('<script src="'.base_url('scripts/gestaocargas_painel.js').'"></script>');
 		/* Lógica do controlador */
 		$colunas = array(
 			'id',
