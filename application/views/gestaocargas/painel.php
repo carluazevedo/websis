@@ -32,21 +32,21 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach ($registros as $reg) : ?>
+				<?php foreach ($dados_gestao as $gestao) : ?>
 
 				<tr>
-					<td><?php echo $reg->id; ?></td>
-					<td hidden><?php echo $this->geral_model->formata_data_hora($reg->data_atualizacao); ?></td>
-					<td class="status"><?php echo $reg->status; ?></td>
-					<td><?php echo $reg->dt; ?></td>
-					<td><?php echo $reg->transportadora; ?></td>
-					<td><?php echo ($reg->isca == 0) ? '-' : $reg->isca; ?></td>
-					<td><?php echo ($reg->monitoramento == '') ? '-' : $reg->monitoramento; ?></td>
-					<td><?php echo ($reg->escolta_1 == '') ? '-' : $reg->escolta_1 ; ?></td>
-					<td><?php echo ($reg->escolta_2 == '') ? '-' : $reg->escolta_2 ; ?></td>
-					<td><?php echo $this->geral_model->formata_data_hora($reg->data_checkin); ?></td>
-					<td><?php echo $this->geral_model->formata_data_hora($reg->data_checkout); ?></td>
-					<td><?php echo ($reg->isca_inserida == '') ? '-' : $reg->isca_inserida; ?></td>
+					<td><?php echo $gestao->id; ?></td>
+					<td hidden><?php echo $this->geral_model->formata_data_hora($gestao->data_atualizacao); ?></td>
+					<td class="status"><?php echo $gestao->status; ?></td>
+					<td><?php echo $gestao->dt; ?></td>
+					<td><?php echo $gestao->transportadora; ?></td>
+					<td><?php echo ($gestao->isca == 0) ? '-' : $gestao->isca; ?></td>
+					<td><?php echo ($gestao->monitoramento == '') ? '-' : $gestao->monitoramento; ?></td>
+					<td><?php echo ($gestao->escolta_1 == '') ? '-' : $gestao->escolta_1 ; ?></td>
+					<td><?php echo ($gestao->escolta_2 == '') ? '-' : $gestao->escolta_2 ; ?></td>
+					<td><?php echo $this->geral_model->formata_data_hora($gestao->data_checkin); ?></td>
+					<td><?php echo $this->geral_model->formata_data_hora($gestao->data_checkout); ?></td>
+					<td><?php echo ($gestao->isca_inserida == '') ? '-' : $gestao->isca_inserida; ?></td>
 				</tr>
 				<?php endforeach; ?>
 

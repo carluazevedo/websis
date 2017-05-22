@@ -16,8 +16,8 @@ CREATE TABLE `gestaocargas` (
 
 CREATE TABLE `gestaocargas_dados_k9` (
 	`id` INT(4) NOT NULL AUTO_INCREMENT,
-	`dt` VARCHAR(256) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 	`data_criacao` DATETIME NOT NULL,
+	`dt` VARCHAR(256) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 	`veiculo` VARCHAR(8) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 	`reboque` VARCHAR(8) CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
 	`inicio_previsto` DATETIME NULL,
@@ -28,8 +28,8 @@ CREATE TABLE `gestaocargas_dados_k9` (
 
 CREATE TABLE `gestaocargas_dados_ksgr` (
 	`id` INT(4) NOT NULL AUTO_INCREMENT,
-	`dt` VARCHAR(256) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 	`data_criacao` DATETIME NOT NULL,
+	`dt` VARCHAR(256) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 	`veiculo` VARCHAR(8) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 	`reboque` VARCHAR(8) CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
 	`inicio_previsto` DATETIME NULL,
