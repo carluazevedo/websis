@@ -23,23 +23,33 @@ class Gestaocargas extends CI_Controller {
 		/* Informações para 'rodape.php' */
 		$data['incluir_rodape'] = array('<script src="'.base_url('scripts/gestaocargas_painel.js').'"></script>');
 		/* Lógica do controlador */
-		$dados_gestao = $this->gestaocargas_model->listar_registros('gestaocargas', '', 'ASC');
-		$dados_gestao_dt = array();
-		$dados_gestao_k9 = array();
-
-		echo '<pre>';
-
-		for ($i = 0; $i < count($dados_gestao); $i++) {
-			array_push($dados_gestao_dt, preg_replace('/^000(\d+).+000(\d+)/', '$1', $dados_gestao[$i]->dt));
+		$gestao = $this->gestaocargas_model->listar_registros('gestaocargas', '', 'ASC');
+		$data['gestao'] = array();
+		$data['gestao_k9'] = array();
+		for ($i = 0; $i < count($gestao); $i++) {
 			array_push(
-				$dados_gestao_k9, $this->gestaocargas_model->pesquisar_registros(
-					'gestaocargas_dados_k9', 'dt', preg_replace('/^000(\d+).+000(\d+)/', '$1', $dados_gestao[$i]->dt)
+				$data['gestao_k9'], $this->gestaocargas_model->pesquisar_registros(
+					'gestaocargas_dados_k9', 'dt', preg_replace('/^000(\d+).+000(\d+)/', '$1', $gestao[$i]->dt)
 				)
 			);
+			$data['gestao'][$i]['id']               = $gestao[$i]->id;
+			$data['gestao'][$i]['data_atualizacao'] = $gestao[$i]->data_atualizacao;
+			$data['gestao'][$i]['status']           = $gestao[$i]->status;
+			$data['gestao'][$i]['dt']               = $gestao[$i]->dt;
+			$data['gestao'][$i]['transportadora']   = $gestao[$i]->transportadora;
+			$data['gestao'][$i]['isca']             = $gestao[$i]->isca;
+			$data['gestao'][$i]['monitoramento']    = $gestao[$i]->monitoramento;
+			$data['gestao'][$i]['escolta_1']        = $gestao[$i]->escolta_1;
+			$data['gestao'][$i]['escolta_2']        = $gestao[$i]->escolta_2;
+			$data['gestao'][$i]['data_checkin']     = $gestao[$i]->data_checkin;
+			$data['gestao'][$i]['data_checkout']    = $gestao[$i]->data_checkout;
+			$data['gestao'][$i]['isca_inserida']    = $gestao[$i]->isca_inserida;
 		}
-		var_dump($dados_gestao_dt);
-		var_dump($dados_gestao_k9);
 
+		echo '<pre>';
+		#var_dump($gestao);
+		var_dump($data['gestao']);
+		var_dump($data['gestao_k9']);
 		echo '</pre>';
 		/* Conclusão */
 		#$this->load->view($view, $data);

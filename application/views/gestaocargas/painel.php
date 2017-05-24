@@ -29,24 +29,26 @@
 					<th>CHECK-IN</th>
 					<th>CHECK-OUT</th>
 					<th>ISCA INSERIDA</th>
+					<th>KRONAONE</th>
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach ($dados_gestao as $gestao) : ?>
+				<?php foreach ($gestao as $g) : ?>
 
 				<tr>
-					<td><?php echo $gestao->id; ?></td>
-					<td hidden><?php echo $this->geral_model->formata_data_hora($gestao->data_atualizacao); ?></td>
-					<td class="status"><?php echo $gestao->status; ?></td>
-					<td><?php echo $gestao->dt; ?></td>
-					<td><?php echo $gestao->transportadora; ?></td>
-					<td><?php echo ($gestao->isca == 0) ? '-' : $gestao->isca; ?></td>
-					<td><?php echo ($gestao->monitoramento == '') ? '-' : $gestao->monitoramento; ?></td>
-					<td><?php echo ($gestao->escolta_1 == '') ? '-' : $gestao->escolta_1 ; ?></td>
-					<td><?php echo ($gestao->escolta_2 == '') ? '-' : $gestao->escolta_2 ; ?></td>
-					<td><?php echo $this->geral_model->formata_data_hora($gestao->data_checkin); ?></td>
-					<td><?php echo $this->geral_model->formata_data_hora($gestao->data_checkout); ?></td>
-					<td><?php echo ($gestao->isca_inserida == '') ? '-' : $gestao->isca_inserida; ?></td>
+					<td><?php echo $g->id; ?></td>
+					<td hidden><?php echo $this->geral_model->formata_data_hora($g->data_atualizacao); ?></td>
+					<td class="status"><?php echo $g->status; ?></td>
+					<td><?php echo $g->dt; ?></td>
+					<td><?php echo $g->transportadora; ?></td>
+					<td><?php echo ($g->isca == 0) ? '-' : $g->isca; ?></td>
+					<td><?php echo ($g->monitoramento == '' || $g->monitoramento == '0') ? '-' : $g->monitoramento; ?></td>
+					<td><?php echo ($g->escolta_1 == '' || $g->escolta_1== '0') ? '-' : $g->escolta_1 ; ?></td>
+					<td><?php echo ($g->escolta_2 == '' || $g->escolta_2== '0') ? '-' : $g->escolta_2 ; ?></td>
+					<td><?php echo $this->geral_model->formata_data_hora($g->data_checkin); ?></td>
+					<td><?php echo $this->geral_model->formata_data_hora($g->data_checkout); ?></td>
+					<td><?php echo ($g->isca_inserida == '' || $g->isca_inserida == '0') ? '-' : $g->isca_inserida; ?></td>
+					<td></td>
 				</tr>
 				<?php endforeach; ?>
 
