@@ -15,7 +15,7 @@ CREATE TABLE `gestaocargas` (
 ) DEFAULT CHARSET=utf8;
 
 CREATE TABLE `gestaocargas_dados_k9` (
-	`id` INT(4) NOT NULL AUTO_INCREMENT,
+	`id` INT(10) NOT NULL AUTO_INCREMENT,
 	`data_criacao` DATETIME NOT NULL,
 	`dt` VARCHAR(256) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 	`veiculo` VARCHAR(8) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE `gestaocargas_dados_k9` (
 ) DEFAULT CHARSET=utf8;
 
 CREATE TABLE `gestaocargas_dados_ksgr` (
-	`id` INT(4) NOT NULL AUTO_INCREMENT,
+	`id` INT(10) NOT NULL AUTO_INCREMENT,
 	`data_criacao` DATETIME NOT NULL,
 	`dt` VARCHAR(256) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 	`veiculo` VARCHAR(8) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
