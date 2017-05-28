@@ -23,6 +23,7 @@ CREATE TABLE `gestaocargas_dados_k9` (
 	`inicio_previsto` DATETIME NULL,
 	`inicio_real` DATETIME NULL,
 	`fim_real` DATETIME NULL,
+	`status` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 	PRIMARY KEY (`id`)
 ) DEFAULT CHARSET=utf8;
 
@@ -35,5 +36,6 @@ CREATE TABLE `gestaocargas_dados_ksgr` (
 	`inicio_previsto` DATETIME NULL,
 	`inicio_real` DATETIME NULL,
 	`fim_real` DATETIME NULL,
+	`status` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 	PRIMARY KEY (`id`)
 ) DEFAULT CHARSET=utf8;

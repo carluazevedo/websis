@@ -13,14 +13,14 @@
 			<th>CHECK-IN</th>
 			<th>CHECK-OUT</th>
 			<th>ISCA INSERIDA</th>
-			<th>RESULT. KRONAONE</th>
+			<th>RESULT. <?php echo strtoupper($base_dados); ?></th>
 		</tr>
 	</thead>
 	<tbody class="text-nowrap">
 		<?php foreach ($gestao as $g) : ?>
 
 		<tr>
-			<td onclick="info_resultados()" data-dt=""><?php echo $g->id; ?></td>
+			<td data-dt=""><?php echo $g->id; ?></td>
 			<td hidden><?php echo $this->geral_model->formata_data_hora($g->data_atualizacao); ?></td>
 			<td class="status"><?php echo $g->status; ?></td>
 			<td><?php echo $g->dt; ?></td>
@@ -32,7 +32,13 @@
 			<td><?php echo $this->geral_model->formata_data_hora($g->data_checkin); ?></td>
 			<td><?php echo $this->geral_model->formata_data_hora($g->data_checkout); ?></td>
 			<td><?php echo ($g->isca_inserida == '' || $g->isca_inserida == '0') ? '-' : $g->isca_inserida; ?></td>
-			<td><?php echo ($g->resultados == '0') ? '' : $g->resultados; ?></td>
+			<?php
+				if ($g->resultados == '0') :
+			echo '<td></td>'.PHP_EOL;
+				else :
+			printf('<td id="%s" onclick="resultados(this)">%s</td>'.PHP_EOL, $g->numero_dt, $g->resultados);
+				endif;
+			?>
 		</tr>
 		<?php endforeach; ?>
 

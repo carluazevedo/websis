@@ -22,3 +22,12 @@ for (i = 0; i < el.length; i++) {
 			break;
 	}
 }
+
+function resultados(e)
+{
+	ajaxPostResponse(site_url+'gestaocargas/buscar/'+base_dados, e.id, resultado);
+	function resultado(callback)
+	{
+		alert(callback);
+	}
+}
