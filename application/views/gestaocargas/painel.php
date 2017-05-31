@@ -1,3 +1,5 @@
+<?php $this->load->view('gestaocargas/modal_painel_resultados'); ?>
+
 <table class="table table-bordered table-condensed table-hover">
 	<thead>
 		<tr>
@@ -20,7 +22,7 @@
 		<?php foreach ($gestao as $g) : ?>
 
 		<tr>
-			<td data-dt=""><?php echo $g->id; ?></td>
+			<td><?php echo $g->id; ?></td>
 			<td hidden><?php echo $this->geral_model->formata_data_hora($g->data_atualizacao); ?></td>
 			<td class="status"><?php echo $g->status; ?></td>
 			<td><?php echo $g->dt; ?></td>
@@ -31,12 +33,12 @@
 			<td><?php echo ($g->escolta_2 == '' || $g->escolta_2== '0') ? '-' : $g->escolta_2 ; ?></td>
 			<td><?php echo $this->geral_model->formata_data_hora($g->data_checkin); ?></td>
 			<td><?php echo $this->geral_model->formata_data_hora($g->data_checkout); ?></td>
-			<td><?php echo ($g->isca_inserida == '' || $g->isca_inserida == '0') ? '-' : $g->isca_inserida; ?></td>
+			<td><?php echo ($g->isca_inserida == '' || $g->isca_inserida == '0') ? '' : $g->isca_inserida; ?></td>
 			<?php
 				if ($g->resultados == '0') :
 			echo '<td></td>'.PHP_EOL;
 				else :
-			printf('<td id="%s" onclick="resultados(this)">%s</td>'.PHP_EOL, $g->numero_dt, $g->resultados);
+			echo "<td id='{$g->numero_dt}' class='resultados info'>{$g->resultados}</td>".PHP_EOL;
 				endif;
 			?>
 		</tr>

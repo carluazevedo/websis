@@ -23,11 +23,11 @@ for (i = 0; i < el.length; i++) {
 	}
 }
 
-function resultados(e)
-{
-	ajaxPostResponse(site_url+'gestaocargas/buscar/'+base_dados, e.id, resultado);
+$('.resultados').click(function() {
+	$('#modal-resultados').modal('toggle');
+	ajaxPostResponse(site_url+'gestaocargas/buscar/'+base_dados, this.id, resultado);
 	function resultado(callback)
 	{
-		alert(callback);
+		document.querySelector('#modal-resultados .modal-body').innerHTML = callback;
 	}
-}
+});

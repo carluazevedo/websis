@@ -7,3 +7,15 @@
 .table thead>tr>th {
 	vertical-align: middle;
 }
+
+.resultados {
+	cursor: pointer;
+}
+
+#modal-resultados .modal-header .glyphicon-info-sign {
+	color: #5bc0de;
+}
+
+#modal-resultados .modal-body {
+	font-size: 12pt;
+}

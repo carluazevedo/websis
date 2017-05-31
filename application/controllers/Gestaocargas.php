@@ -80,11 +80,14 @@ class Gestaocargas extends CI_Controller {
 		$resultados = $this->gestaocargas_model->pesquisar_registros($tabela, 'dt', $numero_dt);
 		header("Content-Type: text/html; charset=UTF-8");
 		for ($i = 0; $i < count($resultados); $i++) {
-			printf('-> DT: %s (%s)'.PHP_EOL, $resultados[$i]->dt, $resultados[$i]->status);
-			printf('DATA CRIAÇÃO: %s'.PHP_EOL, $this->geral_model->formata_data_hora($resultados[$i]->data_criacao));
-			printf('PLACAS: %s / %s'.PHP_EOL, $resultados[$i]->veiculo, $resultados[$i]->reboque);
-			printf('INÍCIO REAL: %s'.PHP_EOL, $this->geral_model->formata_data_hora($resultados[$i]->inicio_real));
-			printf('FIM REAL: %s'.PHP_EOL, $this->geral_model->formata_data_hora($resultados[$i]->fim_real));
+			echo "<table class='table table-hover table-condensed'>
+					<tr><th>DT</th><td>{$resultados[$i]->dt}</td></tr>
+					<tr><th>STATUS</th><td>{$resultados[$i]->status}</td></tr>
+					<tr><th>PLACAS</th><td>{$resultados[$i]->veiculo}/{$resultados[$i]->reboque}</td></tr>
+					<tr><th>DATA DE CRIAÇÃO</th><td>{$this->geral_model->formata_data_hora($resultados[$i]->data_criacao)}</td></tr>
+					<tr><th>INÍCIO REAL</th><td>{$this->geral_model->formata_data_hora($resultados[$i]->inicio_real)}</td></tr>
+					<tr><th>FIM REAL</th><td>{$this->geral_model->formata_data_hora($resultados[$i]->fim_real)}</td></tr>
+				</table>";
 		}
 	}
 }
