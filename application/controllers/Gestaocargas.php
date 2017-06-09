@@ -17,7 +17,7 @@ class Gestaocargas extends CI_Controller {
 		redirect('gestaocargas/dados/k9/05');
 	}
 
-	public function dados($base = 'k9', $periodo = '')
+	public function dados($base = 'k9', $periodo = '05')
 	{
 		/* Declaração de variáveis */
 		$tabela = 'gestaocargas_dados_'.$base;

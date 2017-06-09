@@ -18,7 +18,7 @@
 			<th>RESULT. <?php echo strtoupper($base_dados); ?></th>
 		</tr>
 	</thead>
-	<tbody class="text-nowrap">
+	<tbody>
 		<?php foreach ($gestao as $g) : ?>
 
 		<tr>

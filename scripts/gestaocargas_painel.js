@@ -12,7 +12,7 @@ for (i = 0; i < el.length; i++) {
 			el[i].style = 'background: #ffff00';
 			break;
 		case 'LIBERADO SEM ISCA/MONITORAMENTO/INFOLOG':
-			el[i].style = 'background: #ff0000';
+			el[i].style = 'background: #ff0000;white-space: normal;';
 			break;
 		case 'SOLICITAR ESCOLTA':
 			el[i].style = 'background: #ffc000';

@@ -4,7 +4,12 @@
 	font-family: UbuntuMono;
 }
 
-.table thead>tr>th {
+.table tbody {
+	white-space: nowrap;
+}
+
+.table thead>tr>th,
+.table tbody>tr>td {
 	vertical-align: middle;
 }
 
