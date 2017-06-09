@@ -1,5 +1,5 @@
 CREATE TABLE `gestaocargas` (
-	`id` INT(4) NOT NULL AUTO_INCREMENT,
+	`id` VARCHAR(12) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
 	`data_atualizacao` DATETIME NULL,
 	`status` VARCHAR(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
 	`dt` VARCHAR(256) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,

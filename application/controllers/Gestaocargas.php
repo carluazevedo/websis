@@ -9,15 +9,15 @@ class Gestaocargas extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('geral_model');
-		$this->load->model('gestaocargas_model');
+		$this->load->model('gestaocargas_model', 'gc_model');
 	}
 
 	public function index()
 	{
-		redirect('gestaocargas/dados/k9');
+		redirect('gestaocargas/dados/k9/05');
 	}
 
-	public function dados($base = 'k9')
+	public function dados($base = 'k9', $periodo = '')
 	{
 		/* Declaração de variáveis */
 		$tabela = 'gestaocargas_dados_'.$base;
@@ -41,13 +41,18 @@ class Gestaocargas extends CI_Controller {
 			'<script src="'.base_url('scripts/gestaocargas_painel.js').'"></script>'
 		);
 		/* Lógica do controlador */
-		$gestao = $this->gestaocargas_model->listar_registros('gestaocargas', '', 'ASC');
+		/* ->Seleciona os dados conforme o mês especificado no argumento '$periodo' */
+		$gestao = $this->db->select()
+			->where('MONTH(data_atualizacao)', $periodo)
+			->order_by('id', 'ASC')
+			->get('gestaocargas')
+			->result();
 		/* ->Preparação de dados para exibição */
 		for ($i = 0; $i < count($gestao); $i++) {
 			/* ->Transforma os dados da coluna 'dt' para um formato especifico usando expressão regular */
 			array_push($numero_dt, preg_replace('/^000(\d+).+000(\d+)/', '$1', $gestao[$i]->dt));
 			/* ->Armazena os resultados da pesquisa de cada DT */
-			array_push($resultados, $this->gestaocargas_model->pesquisar_registros($tabela, 'dt', $numero_dt[$i]));
+			array_push($resultados, $this->gc_model->pesquisar_registros($tabela, 'dt', $numero_dt[$i]));
 			/* ->Falsa função 'JOIN' */
 			$gestao_tmp[$i]['id']               = $gestao[$i]->id;
 			$gestao_tmp[$i]['data_atualizacao'] = $gestao[$i]->data_atualizacao;
@@ -77,7 +82,7 @@ class Gestaocargas extends CI_Controller {
 		$this->input->post('valor') OR exit(show_error('Acesso não permitido.', 403, '403 Forbidden'));
 		$numero_dt = $this->input->post('valor');
 		$tabela = 'gestaocargas_dados_'.$base;
-		$resultados = $this->gestaocargas_model->pesquisar_registros($tabela, 'dt', $numero_dt);
+		$resultados = $this->gc_model->pesquisar_registros($tabela, 'dt', $numero_dt);
 		header("Content-Type: text/html; charset=UTF-8");
 		for ($i = 0; $i < count($resultados); $i++) {
 			echo "<table class='table table-hover table-condensed'>

@@ -64,8 +64,6 @@ class Gestaocargas_model extends CI_Model {
 	{
 		$query = $this->db->select($colunas)
 			->like($criterio_like, $condicao_like, 'both')
-			/*->order_by('nome', 'ASC')*/
-			/*->limit(5)*/
 			->get($tabela);
 		if ($resultado_matriz == false) {
 			return $query->result();
