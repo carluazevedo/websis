@@ -28,6 +28,16 @@ class Geral_model extends CI_Model {
 		return $dataf;
 	}
 
+	public function formata_data_hora($data)
+	{
+		if ($data == 0) {
+			return '';
+		} else {
+			$dataf = date_format(date_create($data), 'd/m/Y H:i');
+			return $dataf;
+		}
+	}
+
 	public function calcula_idade($data)
 	{
 		$data_nasc = date_create($data);

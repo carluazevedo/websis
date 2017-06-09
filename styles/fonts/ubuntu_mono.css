@@ -1,0 +1,44 @@
+/**
+ * Folha de estilo para definicao da fonte Ubuntu Mono e todas sua variacoes
+ */
+@charset "UTF-8";
+
+/**
+ * Estilo Normal
+ */
+@font-face {
+	font-family: UbuntuMono;
+	src: url(ubuntu_mono/ubuntu_mono.ttf);
+	font-weight: normal;
+	font-style: normal;
+}
+
+/**
+ * Estilo Italico
+ */
+@font-face {
+	font-family: UbuntuMono;
+	src: url(ubuntu_mono/ubuntu_mono_italic.ttf);
+	font-weight: normal;
+	font-style: italic;
+}
+
+/**
+ * Estilo Negrito
+ */
+@font-face {
+	font-family: UbuntuMono;
+	src: url(ubuntu_mono/ubuntu_mono_bold.ttf);
+	font-weight: bold;
+	font-style: normal;
+}
+
+/**
+ * Estilo Negrito Italico
+ */
+@font-face {
+	font-family: UbuntuMono;
+	src: url(ubuntu_mono/ubuntu_mono_bold_italic.ttf);
+	font-weight: bold;
+	font-style: italic;
+}

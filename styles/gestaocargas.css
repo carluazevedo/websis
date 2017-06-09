@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+.table {
+	font-family: UbuntuMono;
+}
+
+.table tbody {
+	white-space: nowrap;
+}
+
+.table thead>tr>th,
+.table tbody>tr>td {
+	vertical-align: middle;
+}
+
+.resultados {
+	cursor: pointer;
+}
+
+#modal-resultados .modal-header .glyphicon-info-sign {
+	color: #5bc0de;
+}
+
+#modal-resultados .modal-body {
+	font-size: 12pt;
+}
