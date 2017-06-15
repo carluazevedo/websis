@@ -71,4 +71,9 @@ class Gestaocargas_model extends CI_Model {
 			return $query->result_array();
 		}
 	}
+
+	public function mes_atual()
+	{
+		return date_format(date_create(), 'm');
+	}
 }

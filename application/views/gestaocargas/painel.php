@@ -3,7 +3,7 @@
 <table class="table table-bordered table-condensed table-hover">
 	<thead>
 		<tr>
-			<th>#</th>
+			<th>ID</th>
 			<th hidden>DATA DE ATUALIZAÇÃO</th>
 			<th>STATUS</th>
 			<th>DT</th>

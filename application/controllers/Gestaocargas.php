@@ -10,14 +10,15 @@ class Gestaocargas extends CI_Controller {
 		parent::__construct();
 		$this->load->model('geral_model');
 		$this->load->model('gestaocargas_model', 'gc_model');
+		$this->mes_atual = $this->gc_model->mes_atual();
 	}
 
 	public function index()
 	{
-		redirect('gestaocargas/dados/k9/05');
+		redirect('gestaocargas/dados/k9/'.$this->mes_atual);
 	}
 
-	public function dados($base = 'k9', $periodo = '05')
+	public function dados($base = 'k9', $periodo = '')
 	{
 		/* Declaração de variáveis */
 		$tabela = 'gestaocargas_dados_'.$base;
